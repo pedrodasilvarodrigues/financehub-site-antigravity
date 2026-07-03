@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  BookOpen, HelpCircle, AlertTriangle, ListRestart, 
-  ChevronRight, Terminal, CheckCircle2, AlertCircle 
+import {
+  BookOpen, HelpCircle, AlertTriangle, ListRestart,
+  ChevronRight, Terminal, CheckCircle2, AlertCircle
 } from 'lucide-react';
 import './Documentacao.css';
 
@@ -33,7 +33,7 @@ export default function Documentacao() {
         { id: 'manual-pdv', label: 'PDV / Caixa' },
         { id: 'manual-precificacao', label: 'Precificação' },
         { id: 'manual-logistica', label: 'Logística & Fretes' },
-        { id: 'manual-ia', label: 'Assistente AI' }
+        { id: 'manual-ia', label: 'Assistente' }
       ]
     },
     {
@@ -48,29 +48,29 @@ export default function Documentacao() {
 
   const faqs = [
     {
-      q: 'O FinanceHub requer conexão permanente com a internet?',
-      a: 'Não. O software funciona completamente offline para registro de vendas, fechamento de caixa e rotinas básicas. A conexão só é necessária para sincronizar os dados com a nuvem, emitir notas fiscais eletrônicas (que exigem validação da SEFAZ) e interagir com o Assistente Virtual AI.'
+      q: 'O FinanceHub funciona sem internet?',
+      a: 'A versão atual depende da versão online publicada na Vercel e do Supabase para login e dados. O aplicativo Windows abre essa versão online.'
     },
     {
-      q: 'Consigo emitir NFC-e e NF-e diretamente pelo sistema?',
-      a: 'Sim, o FinanceHub possui motor fiscal homologado para emissão de Nota Fiscal de Consumidor Eletrônica (NFC-e) e Nota Fiscal Eletrônica (NF-e) em todos os estados brasileiros. É necessário possuir certificado digital A1 válido.'
+      q: 'O sistema emite documentos fiscais reais?',
+      a: 'Não. A versão atual não possui emissão fiscal homologada. O foco atual é gestão de vendas, caixa, estoque, financeiro, pedidos e frete.'
     },
     {
-      q: 'Como funciona a sincronização multiempresa?',
-      a: 'Os dados de cada computador local são gravados no banco de dados SQLite local. Um agente em background sincroniza de forma segura essas alterações com nosso servidor na nuvem a cada 30 segundos. A matriz lê os dados consolidados da nuvem.'
+      q: 'Onde os dados ficam salvos?',
+      a: 'Os dados da aplicação são carregados e salvos no Supabase por organização autenticada. Contas novas começam sem dados operacionais.'
     },
     {
-      q: 'Os meus dados financeiros ficam seguros?',
-      a: 'Sim. Os dados locais são criptografados com AES-256 e o banco em nuvem é hospedado em servidores de alta segurança (AWS) com backups automáticos diários. Nós não compartilhamos ou acessamos seus dados financeiros.'
+      q: 'O botão de download baixa um instalador real?',
+      a: 'Sim. O download aponta para o instalador Windows FinanceHub-Setup-1.0.0.exe publicado no GitHub Releases.'
     },
     {
-      q: 'Posso importar cadastros antigos de outras planilhas?',
-      a: 'Sim, na aba de Configurações do FinanceHub existe uma ferramenta para importação em lote de clientes, produtos e fornecedores a partir de arquivos Excel (.xlsx) ou CSV.'
+      q: 'O assistente usa IA generativa?',
+      a: 'Não nesta versão. Ele funciona como assistente operacional por consultas estruturadas e exemplos de comando.'
     }
   ];
 
   const filteredFaqs = faqs.filter(
-    faq => faq.q.toLowerCase().includes(faqSearch.toLowerCase()) || 
+    faq => faq.q.toLowerCase().includes(faqSearch.toLowerCase()) ||
            faq.a.toLowerCase().includes(faqSearch.toLowerCase())
   );
 
@@ -82,12 +82,11 @@ export default function Documentacao() {
         <div className="badge">Central de Ajuda</div>
         <h1 className="page-title text-gradient">Documentação do FinanceHub</h1>
         <p className="page-subtitle">
-          Guias completos de instalação, manuais de uso por módulo operacional, FAQ detalhado e changelog de atualizações.
+          Guias objetivos sobre instalação, módulos atuais, dados no Supabase, aplicativo Windows e limitações reais da versão atual.
         </p>
       </div>
 
       <div className="docs-layout">
-        {/* Sidebar */}
         <aside className="docs-sidebar">
           {docStructure.map((group, gIdx) => (
             <div key={gIdx} className="docs-group">
@@ -109,26 +108,25 @@ export default function Documentacao() {
           ))}
         </aside>
 
-        {/* Content reader */}
         <main className="docs-content glass-card animate-fade-in" key={activeTab}>
           {activeTab === 'intro' && (
             <div className="doc-section">
               <h2>O que é o FinanceHub</h2>
               <p>
-                O FinanceHub é a plataforma ideal para organizar a gestão da sua empresa. Ele une frente de caixa (PDV), inteligência de precificação tributária, relatórios dinâmicos de faturamento e fluxo de caixa, além de logística avançada em um sistema desktop ágil e simples de usar.
+                O FinanceHub é uma aplicação de gestão financeira e operacional construída em React + Vite, conectada ao Supabase e publicada na Vercel. Ela possui módulos para vendas, produtos, estoque, pedidos, caixa, financeiro, relatórios, logística, agenda, fornecedores e equipe.
               </p>
               <div className="doc-alert note">
                 <BookOpen size={20} />
                 <div>
                   <strong>Propósito do Site</strong>
-                  <p>Este site é exclusivamente a central de apresentação e documentação do FinanceHub. O software operacional é acessado após instalação no seu computador.</p>
+                  <p>Este site apresenta o projeto e oferece o instalador Windows. O sistema real é acessado online ou pelo aplicativo desktop.</p>
                 </div>
               </div>
               <h3>Principais Pilares</h3>
               <ul>
-                <li><strong>Eficiência Fiscal:</strong> Emissão ágil de cupons fiscais e notas fiscais.</li>
-                <li><strong>Gestão Segura:</strong> Banco de dados local criptografado contra acessos não autorizados.</li>
-                <li><strong>IA Integrada:</strong> Análises preditivas do seu negócio sem necessidade de planilhas complexas.</li>
+                <li><strong>Gestão operacional:</strong> vendas, estoque, pedidos e financeiro em uma interface única.</li>
+                <li><strong>Dados por empresa:</strong> autenticação e persistência com Supabase.</li>
+                <li><strong>Aplicativo Windows:</strong> Electron carregando a versão online hospedada na Vercel.</li>
               </ul>
             </div>
           )}
@@ -136,8 +134,7 @@ export default function Documentacao() {
           {activeTab === 'requisitos' && (
             <div className="doc-section">
               <h2>Requisitos Mínimos</h2>
-              <p>Consulte as configurações necessárias para que o FinanceHub opere com o melhor desempenho no seu estabelecimento.</p>
-              
+              <p>Consulte as configurações necessárias para abrir o aplicativo desktop ou usar a versão online.</p>
               <table className="docs-table">
                 <thead>
                   <tr>
@@ -149,13 +146,13 @@ export default function Documentacao() {
                 <tbody>
                   <tr>
                     <td>Sistema Operacional</td>
-                    <td>Windows 10 (64-bit)</td>
-                    <td>Windows 11 (64-bit)</td>
+                    <td>Windows 10 64 bits</td>
+                    <td>Windows 11 64 bits</td>
                   </tr>
                   <tr>
-                    <td>Processador</td>
-                    <td>Intel Core i3 ou AMD Ryzen 3</td>
-                    <td>Intel Core i5 ou AMD Ryzen 5</td>
+                    <td>Navegador</td>
+                    <td>Chrome, Edge ou similar atualizado</td>
+                    <td>Chrome ou Edge atualizado</td>
                   </tr>
                   <tr>
                     <td>Memória RAM</td>
@@ -164,13 +161,13 @@ export default function Documentacao() {
                   </tr>
                   <tr>
                     <td>Armazenamento</td>
-                    <td>500 MB livres (SSD preferencial)</td>
-                    <td>2 GB livres (SSD)</td>
+                    <td>500 MB livres</td>
+                    <td>2 GB livres</td>
                   </tr>
                   <tr>
                     <td>Conectividade</td>
-                    <td>Acesso à internet para sincronização</td>
-                    <td>Internet banda larga estável</td>
+                    <td>Internet para login e dados</td>
+                    <td>Internet estável</td>
                   </tr>
                 </tbody>
               </table>
@@ -180,13 +177,13 @@ export default function Documentacao() {
           {activeTab === 'instalacao' && (
             <div className="doc-section">
               <h2>Como Instalar o Software</h2>
-              <p>O processo de instalação é direto e não requer conhecimentos técnicos avançados.</p>
+              <p>O instalador Windows abre uma janela nativa que carrega a versão online do FinanceHub.</p>
               <ol className="doc-steps">
-                <li>Acesse a página de <button className="inline-link" onClick={() => { setActiveTab('baixar') }}>Downloads</button> do nosso site.</li>
-                <li>Clique no botão "Baixar para Windows". O instalador `FinanceHub_Setup.exe` começará a baixar.</li>
-                <li>Dê um duplo clique no instalador baixado para abrir o assistente de instalação.</li>
-                <li>Siga as instruções clicando em "Avançar", escolha o local de instalação e clique em "Instalar".</li>
-                <li>Após finalizado, marque a caixa "Abrir FinanceHub" e clique em "Concluir".</li>
+                <li>Acesse a página de Downloads.</li>
+                <li>Clique em "Baixar FinanceHub para Windows".</li>
+                <li>Execute o arquivo `FinanceHub-Setup-1.0.0.exe`.</li>
+                <li>Siga o assistente de instalação.</li>
+                <li>Abra o FinanceHub e faça login com sua conta.</li>
               </ol>
             </div>
           )}
@@ -195,76 +192,58 @@ export default function Documentacao() {
             <div className="doc-section">
               <h2>Como Baixar</h2>
               <p>
-                Os instaladores oficiais do FinanceHub são disponibilizados unicamente através deste site oficial para garantir a integridade dos arquivos e a segurança do seu computador.
+                O instalador oficial fica publicado no GitHub Releases do projeto institucional. O botão da página Downloads aponta diretamente para esse arquivo.
               </p>
               <div className="doc-alert warning">
                 <AlertTriangle size={20} />
                 <div>
-                  <strong>Aviso de Segurança</strong>
-                  <p>Não baixe o FinanceHub de sites de terceiros ou gerenciadores de downloads alternativos. Isso protege sua empresa de vírus ou cavalos de troia.</p>
+                  <strong>Aviso</strong>
+                  <p>Use o link oficial do site para baixar o instalador. Assim você evita arquivos desatualizados ou modificados por terceiros.</p>
                 </div>
               </div>
-              <p>Nossos arquivos são assinados digitalmente com certificado de segurança verificado.</p>
             </div>
           )}
 
           {activeTab === 'primeira-execucao' && (
             <div className="doc-section">
-              <h2>Primeira Execução & Configuração Inicial</h2>
-              <p>Ao abrir o FinanceHub pela primeira vez, o assistente inteligente guiará você na configuração inicial da empresa.</p>
-              <h3>Etapas da Configuração:</h3>
+              <h2>Primeira Execução</h2>
+              <p>Na primeira abertura, entre com uma conta existente ou crie um cadastro. Cada conta fica ligada a uma organização no Supabase.</p>
+              <h3>Etapas principais:</h3>
               <ul className="doc-check-list">
-                <li>
-                  <CheckCircle2 className="text-green" size={18} />
-                  <span><strong>Identificação Comercial:</strong> Insira o CNPJ da sua empresa para buscar os dados automáticos na Receita Federal.</span>
-                </li>
-                <li>
-                  <CheckCircle2 className="text-green" size={18} />
-                  <span><strong>Regime Tributário:</strong> Selecione entre Simples Nacional, Lucro Presumido ou Lucro Real para configuração fiscal básica.</span>
-                </li>
-                <li>
-                  <CheckCircle2 className="text-green" size={18} />
-                  <span><strong>Criação do Administrador:</strong> Configure o e-mail e senha mestre do usuário administrador da plataforma.</span>
-                </li>
+                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Login:</strong> autenticação por email e senha via Supabase.</span></li>
+                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Empresa:</strong> a organização é carregada para separar os dados da conta.</span></li>
+                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Dados:</strong> contas novas começam vazias e passam a salvar os próprios registros.</span></li>
               </ul>
             </div>
           )}
 
           {activeTab === 'manual-produtos' && (
             <div className="doc-section">
-              <h2>Manual: Cadastro e Controle de Produtos</h2>
-              <p>Gerencie sua grade de produtos, SKU, código de barras e estoque mínimo de forma prática.</p>
-              <h3>Como cadastrar um produto:</h3>
-              <p>1. Vá no menu lateral e selecione <strong>Cadastros &gt; Produtos</strong>.</p>
-              <p>2. Clique em <strong>Novo Produto (+)</strong> no canto superior direito.</p>
-              <p>3. Preencha o nome, descrição, categoria e defina se ele possui variações em grade (cores/tamanhos).</p>
-              <p>4. No campo de preços, você poderá digitar os custos e abrir o simulador de margem de lucro.</p>
-              <p>5. Salve as alterações para disponibilizar o produto no PDV imediatamente.</p>
+              <h2>Manual: Produtos e Estoque</h2>
+              <p>Cadastre produtos, controle preço, custo, categoria, estoque e estoque mínimo.</p>
+              <p>Produtos com atenção ficam destacados em amarelo; produtos críticos ficam destacados em vermelho. A partir do estoque baixo, é possível iniciar uma reposição com fornecedor sugerido.</p>
             </div>
           )}
 
           {activeTab === 'manual-financeiro' && (
             <div className="doc-section">
               <h2>Manual: Gestão Financeira</h2>
-              <p>Mantenha as contas da sua empresa organizadas com o fluxo de caixa diário e conciliação.</p>
-              <h3>Conciliação por OFX:</h3>
-              <p>Vá em <strong>Financeiro &gt; Conciliação</strong>, clique em <strong>Importar Extrato OFX</strong>. O sistema listará todos os lançamentos bancários ao lado esquerdo e contas a pagar/receber correspondentes ao lado direito. Clique em "Conciliar" para liquidar os lançamentos.</p>
+              <p>O módulo financeiro organiza contas e lançamentos. É possível alternar status pago/pendente, excluir registros e acompanhar valores em gráficos e tabelas.</p>
             </div>
           )}
 
           {activeTab === 'manual-pdv' && (
             <div className="doc-section">
-              <h2>Manual: Frente de Caixa (PDV) e Operador</h2>
-              <p>O PDV é desenhado para rapidez. Veja os principais atalhos operacionais:</p>
+              <h2>Manual: Frente de Caixa (PDV) e Caixa</h2>
+              <p>O PDV registra vendas, valida estoque, exige caixa aberto e baixa o saldo do produto ao confirmar a venda.</p>
               <div className="terminal-code">
                 <Terminal size={16} />
                 <code>
-                  [F1] - Iniciar Venda / Pagar com PIX<br />
-                  [F2] - Selecionar Forma de Pagamento (Cartão / Dinheiro)<br />
-                  [F3] - Consultar Estoque / Preço de Item<br />
-                  [F4] - Deixar Compra Atual em Espera (Rascunho)<br />
-                  [F9] - Cancelar Venda Atual / Limpar Tela<br />
-                  [ESC] - Voltar / Fechar Janelas Ativas
+                  1. Abra o caixa<br />
+                  2. Selecione o produto<br />
+                  3. Informe quantidade, desconto e pagamento<br />
+                  4. Confirme a venda<br />
+                  5. Consulte o histórico de vendas
                 </code>
               </div>
             </div>
@@ -272,36 +251,30 @@ export default function Documentacao() {
 
           {activeTab === 'manual-precificacao' && (
             <div className="doc-section">
-              <h2>Manual: Motor de Precificação Inteligente</h2>
-              <p>Aprenda a calcular os preços de venda garantindo margem operacional real.</p>
-              <h3>Entendendo os Fatores:</h3>
-              <ul>
-                <li><strong>Custo de Compra:</strong> Valor cobrado pelo fornecedor na nota fiscal.</li>
-                <li><strong>Tributação:</strong> Percentual de impostos aplicados na venda do produto de acordo com sua NCM.</li>
-                <li><strong>Margem de Contribuição:</strong> A fatia de lucro líquido destinada a pagar os custos fixos da empresa e gerar lucro real.</li>
-              </ul>
+              <h2>Manual: Precificação</h2>
+              <p>O módulo ajuda a analisar custo, margem e preço de venda. Ele não substitui validação contábil ou tributária, mas apoia a decisão comercial.</p>
             </div>
           )}
 
           {activeTab === 'manual-logistica' && (
             <div className="doc-section">
-              <h2>Manual: Gestão de Fretes e Logística</h2>
-              <p>Calcule os custos de postagem e emita etiquetas de envio para Correios e transportadoras.</p>
-              <p>Ao realizar uma venda de entrega, preencha o CEP de destino. O FinanceHub consulta em background as tabelas das transportadoras cadastradas e exibe os custos e prazos de entrega em tempo real.</p>
+              <h2>Manual: Logística e Fretes</h2>
+              <p>O frete aceita CEP, rua, número, bairro, cidade e estado. O CEP pode preencher endereço automaticamente via ViaCEP/BrasilAPI.</p>
+              <p>O mapa usa OpenStreetMap/Leaflet, valida cidade/UF e permite mais de uma entrega na rota.</p>
             </div>
           )}
 
           {activeTab === 'manual-ia' && (
             <div className="doc-section">
-              <h2>Manual: Assistente AI do FinanceHub</h2>
-              <p>Use IA para fazer perguntas rápidas sobre as finanças corporativas.</p>
+              <h2>Manual: Assistente Operacional</h2>
+              <p>O assistente atual usa consultas estruturadas por palavras-chave. Ele não é uma IA generativa completa.</p>
               <div className="doc-alert note">
                 <BookOpen size={20} />
                 <div>
-                  <strong>Exemplos de Perguntas da IA</strong>
-                  <p>"Qual produto teve o maior faturamento este mês?"</p>
-                  <p>"Quais contas a pagar vencem nesta semana?"</p>
-                  <p>"Qual foi o ticket médio das vendas no cartão ontem?"</p>
+                  <strong>Exemplos de consulta</strong>
+                  <p>"Produto mais vendido do mês"</p>
+                  <p>"Vendas do dia"</p>
+                  <p>"Clientes e formas de pagamento"</p>
                 </div>
               </div>
             </div>
@@ -310,8 +283,7 @@ export default function Documentacao() {
           {activeTab === 'faq' && (
             <div className="doc-section">
               <h2>Perguntas Frequentes</h2>
-              <p>Encontre respostas rápidas para as dúvidas mais comuns de novos usuários.</p>
-              
+              <p>Encontre respostas rápidas sobre a versão atual.</p>
               <div className="faq-search-wrapper">
                 <input
                   type="text"
@@ -321,7 +293,6 @@ export default function Documentacao() {
                   className="form-input faq-search"
                 />
               </div>
-
               <div className="faq-list">
                 {filteredFaqs.length > 0 ? (
                   filteredFaqs.map((faq, i) => (
@@ -343,27 +314,25 @@ export default function Documentacao() {
           {activeTab === 'solucao-problemas' && (
             <div className="doc-section">
               <h2>Solução de Problemas Comuns</h2>
-              <p>Guia rápido de diagnósticos para resolver instabilidades operacionais.</p>
-
+              <p>Guia rápido para instabilidades comuns da versão atual.</p>
               <div className="problem-card">
                 <div className="problem-header text-red">
                   <AlertCircle size={18} />
-                  <h3>Erro de comunicação com o Certificado Digital</h3>
+                  <h3>Não consigo entrar na conta</h3>
                 </div>
                 <div className="problem-solution">
-                  <p><strong>Causa Comum:</strong> O Certificado Digital A1 venceu ou a cadeia de chaves de segurança do Windows está desatualizada.</p>
-                  <p><strong>Resolução:</strong> Acesse as configurações de certificado no FinanceHub, verifique a validade. Caso esteja correto, reinstale o certificado no repositório de chaves do Windows em nível de usuário.</p>
+                  <p><strong>Causa comum:</strong> email não confirmado, senha incorreta ou sessão expirada no Supabase.</p>
+                  <p><strong>Resolução:</strong> tente recuperar a senha ou entrar novamente com o email cadastrado.</p>
                 </div>
               </div>
-
               <div className="problem-card">
                 <div className="problem-header text-orange">
                   <AlertCircle size={18} />
-                  <h3>O PDV não abre no computador local</h3>
+                  <h3>O aplicativo desktop abre tela branca</h3>
                 </div>
                 <div className="problem-solution">
-                  <p><strong>Causa Comum:</strong> Porta de rede local ocupada por outro aplicativo ou falha de acesso aos arquivos de banco SQLite local.</p>
-                  <p><strong>Resolução:</strong> Reinicie o computador. Se persistir, verifique se seu antivírus não bloqueou o arquivo `FinanceHub_Service.exe` nas pastas do sistema.</p>
+                  <p><strong>Causa comum:</strong> falha de conexão com a versão online ou deploy em atualização.</p>
+                  <p><strong>Resolução:</strong> verifique a internet e tente recarregar. O app depende da URL publicada na Vercel.</p>
                 </div>
               </div>
             </div>
@@ -371,31 +340,19 @@ export default function Documentacao() {
 
           {activeTab === 'changelog' && (
             <div className="doc-section">
-              <h2>Histórico de Versões (Changelog)</h2>
-              <p>Confira as últimas melhorias, novidades e correções aplicadas ao FinanceHub.</p>
-
+              <h2>Histórico de Versões</h2>
+              <p>Confira o histórico verdadeiro da versão publicada.</p>
               <div className="changelog-timeline">
                 <div className="changelog-item">
                   <div className="changelog-header">
-                    <span className="changelog-ver">Versão 3.4.0</span>
-                    <span className="changelog-date">01 de Junho de 2026</span>
+                    <span className="changelog-ver">Versão 1.0.0</span>
+                    <span className="changelog-date">03 de Julho de 2026</span>
                   </div>
                   <ul>
-                    <li><strong className="tag-new">[NOVO]</strong> Assistente Virtual AI: Agora você pode interagir por voz ou texto para extrair dados financeiros.</li>
-                    <li><strong className="tag-new">[NOVO]</strong> Integração logística com transportadora Loggi.</li>
-                    <li><strong className="tag-fix">[CORREÇÃO]</strong> Lentidão na conciliação OFX com arquivos maiores de 5MB.</li>
-                    <li><strong className="tag-fix">[CORREÇÃO]</strong> Erro de impressão em modelos de bobinas térmicas de 58mm.</li>
-                  </ul>
-                </div>
-
-                <div className="changelog-item">
-                  <div className="changelog-header">
-                    <span className="changelog-ver">Versão 3.3.1</span>
-                    <span className="changelog-date">14 de Abril de 2026</span>
-                  </div>
-                  <ul>
-                    <li><strong className="tag-new">[NOVO]</strong> Recebimento PIX automático via API direta de bancos parceiros.</li>
-                    <li><strong className="tag-fix">[CORREÇÃO]</strong> Falha de sincronização multiempresa em redes corporativas com proxy restrito.</li>
+                    <li><strong className="tag-new">[NOVO]</strong> Instalador Windows publicado como `FinanceHub-Setup-1.0.0.exe`.</li>
+                    <li><strong className="tag-new">[NOVO]</strong> App desktop Electron carregando a versão online do FinanceHub.</li>
+                    <li><strong className="tag-new">[NOVO]</strong> Site institucional com botão real de download.</li>
+                    <li><strong className="tag-fix">[AJUSTE]</strong> Informações do site revisadas para refletir somente funcionalidades existentes.</li>
                   </ul>
                 </div>
               </div>

@@ -4,37 +4,37 @@ import './Sobre.css';
 
 export default function Sobre() {
   const values = [
-    { title: 'Simplicidade Operacional', desc: 'Sistemas devem simplificar rotinas comerciais, e não criar barreiras ou lentidões.' },
-    { title: 'Integridade de Dados', desc: 'Dados financeiros são o maior patrimônio de uma empresa. Segurança vem em primeiro lugar.' },
-    { title: 'Inovação Prática', desc: 'Usamos tecnologia de ponta (como IA) para resolver problemas operacionais e de margem reais.' },
-    { title: 'Foco no Operador', desc: 'Interfaces desenhadas para quem trabalha no caixa o dia todo, evitando digitações desnecessárias.' }
+    { title: 'Clareza Operacional', desc: 'O sistema deve ajudar o usuário a entender vendas, estoque, caixa e financeiro sem poluição visual.' },
+    { title: 'Dados Organizados', desc: 'Cada empresa autenticada deve acessar apenas seus próprios dados operacionais.' },
+    { title: 'Evolução Realista', desc: 'O projeto apresenta o que já funciona e separa com honestidade o que ainda é roadmap.' },
+    { title: 'Foco em Desktop', desc: 'A experiência principal foi pensada para computadores usados em gestão e operação.' }
   ];
 
   const timeline = [
     {
-      date: 'Janeiro de 2024',
-      title: 'Ideação e Pesquisa de Campo',
-      desc: 'Pesquisa detalhada com mais de 50 comerciantes varejistas para identificar as falhas e lentidões dos sistemas de gestão antigos.'
-    },
-    {
-      date: 'Junho de 2024',
-      title: 'Desenvolvimento do Motor Híbrido',
-      desc: 'Desenho da arquitetura offline-first combinando SQLite local com sincronizador em nuvem PostgreSQL e homologação fiscal.'
-    },
-    {
-      date: 'Janeiro de 2025',
-      title: 'Lançamento da Versão 1.0',
-      desc: 'Versão inicial com frente de caixa (PDV) ultra veloz, cadastro de produtos simples e emissão de cupom NFC-e.'
-    },
-    {
-      date: 'Novembro de 2025',
-      title: 'FinanceHub v2.0 & Multiempresa',
-      desc: 'Lançamento do módulo de conciliação bancária OFX e sincronização centralizada de saldos e estoques multiempresa.'
+      date: 'Junho de 2026',
+      title: 'Reconstrução do FinanceHub',
+      desc: 'Início da reconstrução local em React + Vite, partindo da análise do sistema original e dos requisitos do TCC.'
     },
     {
       date: 'Junho de 2026',
-      title: 'FinanceHub v3.4.0 (Atual)',
-      desc: 'Introdução do Assistente Virtual IA com consultas de linguagem natural e módulo de cotação logística automática.'
+      title: 'Módulos Operacionais',
+      desc: 'Implementação de PDV, vendas, produtos, estoque, caixa, financeiro, relatórios, fornecedores, serviços, funcionários, agenda e frete.'
+    },
+    {
+      date: 'Julho de 2026',
+      title: 'Supabase e Dados por Empresa',
+      desc: 'Conexão com Supabase Auth e persistência por organização, removendo dados demonstrativos como base principal do app.'
+    },
+    {
+      date: 'Julho de 2026',
+      title: 'Aplicativo Desktop Windows',
+      desc: 'Criação do app Electron que carrega a versão online hospedada na Vercel, com splash screen, tratamento offline e instalador .exe.'
+    },
+    {
+      date: 'Julho de 2026',
+      title: 'Site Institucional e Download',
+      desc: 'Publicação do site institucional com download real do FinanceHub-Setup-1.0.0.exe via GitHub Releases.'
     }
   ];
 
@@ -44,14 +44,13 @@ export default function Sobre() {
       <div className="glow-spot-secondary" style={{ bottom: '15%', right: '10%' }}></div>
 
       <div className="section-header text-center animate-fade-in">
-        <div className="badge">Sobre Nós</div>
-        <h1 className="page-title text-gradient">Nossa História & Missão</h1>
+        <div className="badge">Sobre o Projeto</div>
+        <h1 className="page-title text-gradient">História & Objetivo</h1>
         <p className="page-subtitle">
-          Saiba como a equipe do FinanceHub está unificando o controle de caixa, estoques e margens de lucro para milhares de empresas no Brasil.
+          O FinanceHub é um projeto de TCC voltado à gestão financeira e operacional, com foco em interface desktop, Supabase e distribuição por aplicativo Windows.
         </p>
       </div>
 
-      {/* Main Info */}
       <div className="about-intro-grid">
         <div className="glass-card history-card">
           <div className="card-title-icon">
@@ -59,10 +58,10 @@ export default function Sobre() {
             <h2>História do Projeto</h2>
           </div>
           <p>
-            O FinanceHub nasceu em 2024 ao percebermos uma grande frustração comum no mercado de pequenas e médias empresas: a fragmentação de ferramentas. Donos de lojas precisavam usar uma planilha complexa para precificar itens, outro sistema legado lento para registrar as vendas no caixa, e uma ferramenta na web separada para controlar contas a pagar.
+            O FinanceHub foi desenvolvido para demonstrar como um sistema de gestão pode reunir rotinas importantes de uma empresa em uma interface única: vendas, produtos, estoque, pedidos, caixa, financeiro, frete, agenda e relatórios.
           </p>
           <p style={{ marginTop: '1rem' }}>
-            Nossa equipe de engenheiros e designers de software decidiu mudar isso. Criamos um sistema desktop moderno, construído com tecnologias Web de ponta (Electron, React, C#) capazes de dar velocidade instantânea ao operador, garantindo integridade fiscal e segurança mesmo em quedas de internet.
+            A versão atual combina React + Vite no frontend, Supabase para autenticação e dados, Vercel para hospedagem e Electron para entregar uma experiência desktop no Windows.
           </p>
         </div>
 
@@ -73,21 +72,20 @@ export default function Sobre() {
           </div>
           <ul className="mvv-list">
             <li>
-              <strong>Missão:</strong> Unificar e descomplicar a rotina financeira e operacional de PMEs através de tecnologia local e em nuvem robusta.
+              <strong>Missão:</strong> Organizar vendas, estoque, caixa e financeiro em uma experiência simples para apresentação acadêmica e evolução futura.
             </li>
             <li>
-              <strong>Visão:</strong> Tornar-se o ecossistema de retaguarda e frente de caixa preferido por lojistas e varejistas em constante crescimento no Brasil.
+              <strong>Visão:</strong> Evoluir de protótipo funcional para uma solução mais completa, com permissões, relatórios exportáveis e integrações reais.
             </li>
             <li>
-              <strong>Valores:</strong> Respeito ao tempo do lojista, foco em segurança bancária, transparência fiscal e inovação prática orientada a resultados.
+              <strong>Valores:</strong> Honestidade sobre recursos existentes, segurança dos dados por empresa e foco em usabilidade.
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Corporate Values */}
       <div className="values-section section-padding">
-        <h3 className="section-subtitle-center text-center">Nossos Valores Fundamentais</h3>
+        <h3 className="section-subtitle-center text-center">Valores do Projeto</h3>
         <div className="values-grid">
           {values.map((v, i) => (
             <div key={i} className="glass-card value-card">
@@ -101,11 +99,10 @@ export default function Sobre() {
         </div>
       </div>
 
-      {/* Timeline Vertical */}
       <div className="timeline-section section-padding">
         <h3 className="section-subtitle-center text-center">Linha do Tempo</h3>
         <p className="text-center text-muted" style={{ marginBottom: '4rem' }}>
-          Confira os principais marcos de crescimento do FinanceHub desde a concepção.
+          Principais marcos reais do desenvolvimento recente do FinanceHub.
         </p>
 
         <div className="vertical-timeline">

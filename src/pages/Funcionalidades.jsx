@@ -13,14 +13,14 @@ export default function Funcionalidades() {
       id: 'dashboard',
       icon: <BarChart size={20} />,
       name: 'Dashboard Gerencial',
-      desc: 'Sua cabine de comando empresarial. O Dashboard consolida dados de vendas do PDV, fluxo de caixa e estoques críticos de todas as suas empresas de forma instantânea. Tenha acesso a indicadores cruciais como ticket médio, margem de lucro e faturamento diário sem precisar gerar relatórios complexos.',
+      desc: 'Sua central de acompanhamento. O Dashboard consolida dados de vendas, fluxo de caixa, estoque e indicadores principais da empresa autenticada no Supabase.',
       benefits: [
-        'Atualização em tempo real de transações do PDV.',
+        'Indicadores carregados a partir dos dados salvos da organização.',
         'Gráficos interativos de receitas versus despesas.',
-        'Acompanhamento de metas de faturamento mensal.',
+        'Acompanhamento de faturamento, volume de vendas e ticket médio.',
         'Alertas de estoque abaixo do ponto de ressuprimento.'
       ],
-      useCase: 'O diretor financeiro abre o sistema no início do dia e analisa os gráficos de faturamento acumulado de todas as filiais e toma decisões baseadas em dados consolidados.',
+      useCase: 'O administrador abre o sistema e acompanha vendas, estoque baixo, caixa e financeiro em uma tela mais objetiva.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -55,12 +55,12 @@ export default function Funcionalidades() {
       id: 'pricing',
       icon: <Percent size={20} />,
       name: 'Motor de Precificação',
-      desc: 'Um motor de simulação inteligente para eliminar prejuízos operacionais. Insira o custo de aquisição do produto, adicione os impostos (ICMS, IPI, PIS, COFINS), comissões de vendedores, custos fixos atribuídos e sua margem de contribuição desejada. O sistema calcula e sugere o markup e o preço de venda ideal.',
+      desc: 'Um módulo de simulação para apoiar decisões de preço. Ele permite comparar custo, margem desejada e preço final sem depender de planilhas externas.',
       benefits: [
-        'Cálculo preciso de impostos por região e regime tributário.',
-        'Identificação do Ponto de Equilíbrio (Break-Even) do produto.',
-        'Sugestão automática de Markup de acordo com custos fixos.',
-        'Alertas de preços defasados devido ao aumento de custos.'
+        'Análise de custo, preço e margem.',
+        'Simulação de preço sugerido.',
+        'Apoio ao cadastro e revisão de produtos.',
+        'Visualização mais clara do impacto da margem.'
       ],
       useCase: 'O gerente de compras recebe um lote de produtos com aumento de custo do fornecedor. Ele abre o simulador, ajusta o custo e recalcula a tabela de preços de forma que a margem da empresa seja protegida.',
       mockup: (
@@ -74,7 +74,7 @@ export default function Funcionalidades() {
           <div className="mock-ui-content flex-col">
             <div className="mock-pricing-inputs">
               <div className="inp-row"><span>Custo Original:</span> <strong>R$ 80,00</strong></div>
-              <div className="inp-row"><span>Impostos (NFe):</span> <strong className="text-red">+ 18.00% (R$ 14,40)</strong></div>
+              <div className="inp-row"><span>Custos adicionais:</span> <strong className="text-red">+ R$ 14,40</strong></div>
               <div className="inp-row"><span>Margem Desejada:</span> <strong className="text-cyan">30.00% (R$ 38,40)</strong></div>
             </div>
             <div className="mock-pricing-result">
@@ -90,14 +90,14 @@ export default function Funcionalidades() {
       id: 'products',
       icon: <Box size={20} />,
       name: 'Gestão de Produtos',
-      desc: 'Cadastre e controle seus produtos com facilidade. Suporta grades complexas de produtos (cor, tamanho, voltagem), cadastro de múltiplos códigos de barras (EAN), controle de lote, rastreamento de data de validade, kit de produtos, tabela de preços diferenciada e controle de estoque mínimo.',
+      desc: 'Cadastre e controle produtos com nome, SKU, categoria, custo, preço, estoque e estoque mínimo. A tela também permite editar produtos e acompanhar itens que precisam de reposição.',
       benefits: [
-        'Estruturação rápida de produtos em grade (Ex: P, M, G).',
-        'Controle rígido de validade para evitar perdas.',
-        'Tabela de preços múltiplos (Varejo, Atacado, Distribuidor).',
-        'Histórico completo de movimentações de entrada e saída.'
+        'Cadastro e edição de produtos.',
+        'Controle de preço, custo e estoque.',
+        'Destaque visual para estoque baixo ou crítico.',
+        'Fluxo de reposição com fornecedor sugerido.'
       ],
-      useCase: 'Uma loja de calçados cadastra um tênis esportivo e define rapidamente as variações de cores (Azul, Preto) e tamanhos (38 a 43) em lote, com estoques individuais para cada variação.',
+      useCase: 'Ao identificar um produto com estoque baixo, o administrador pode iniciar uma reposição para fornecedor e registrar o pedido de compra.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -127,14 +127,14 @@ export default function Funcionalidades() {
       id: 'pdv',
       icon: <ShoppingCart size={20} />,
       name: 'Ponto de Venda (PDV)',
-      desc: 'Sua frente de caixa de alta performance. Desenvolvido para funcionar 100% offline, processando compras, calculando descontos e registrando pagamentos instantaneamente. Integração direta com balanças comerciais, leitores de código de barras, impressoras térmicas e faturamento automático de NFC-e.',
+      desc: 'Frente de caixa para registrar vendas, selecionar produtos, quantidade, desconto e forma de pagamento. O fluxo valida caixa aberto, estoque disponível e atualiza os registros do sistema.',
       benefits: [
-        'Operação offline-first garantida contra quedas de internet.',
-        'Recebimento via PIX automático com confirmação na tela.',
-        'Atalhos de teclado configuráveis para operadores rápidos.',
-        'Suspensão de vendas (deixar compra em espera).'
+        'Validação de caixa aberto antes da venda.',
+        'Baixa de estoque após finalizar venda.',
+        'Registro de forma de pagamento.',
+        'Histórico de vendas separado da tela de registro.'
       ],
-      useCase: 'O operador passa os produtos de um cliente com leitor de código de barras, o sistema sugere pagamento via PIX, gera um QR Code dinâmico, confirma a transação em 2 segundos e imprime o cupom fiscal.',
+      useCase: 'O operador escolhe o produto, informa quantidade, desconto e pagamento. Ao confirmar, a venda é registrada e o estoque é atualizado.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -151,7 +151,7 @@ export default function Funcionalidades() {
               </div>
               <div className="screen-action">
                 <div className="subtotal">R$ 28,90</div>
-                <button className="btn-pay-pix">F1 - Pagar com PIX</button>
+                <button className="btn-pay-pix">Confirmar venda</button>
               </div>
             </div>
           </div>
@@ -162,12 +162,12 @@ export default function Funcionalidades() {
       id: 'cash',
       icon: <KeyRound size={20} />,
       name: 'Controle de Caixa',
-      desc: 'Controle completo da movimentação diária do dinheiro no PDV. Gerencie aberturas com saldo inicial, fechamento cego (onde o operador digita o saldo físico para auditoria), suprimentos (entrada de dinheiro para troco), sangrias (retiradas de valores por segurança) e relatórios detalhados de quebras de caixa.',
+      desc: 'Controle da situação do caixa, abertura, fechamento e acompanhamento do saldo esperado com base nas vendas registradas.',
       benefits: [
-        'Fechamento de caixa cego para evitar desvios.',
-        'Auditoria detalhada de suprimentos e sangrias.',
-        'Registro de movimentações por operador de caixa.',
-        'Envio de alertas de limite de dinheiro em gaveta.'
+        'Abertura e fechamento de caixa.',
+        'Saldo esperado calculado a partir das vendas.',
+        'Histórico de caixa disponível para consulta.',
+        'Integração com o fluxo de vendas.'
       ],
       useCase: 'Ao final do expediente, o operador declara os valores existentes na gaveta. O sistema confronta as informações com os registros do sistema e aponta eventuais quebras ou sobras.',
       mockup: (
@@ -196,26 +196,26 @@ export default function Funcionalidades() {
       id: 'finance',
       icon: <DollarSign size={20} />,
       name: 'Financeiro',
-      desc: 'Ferramentas de tesouraria de alto nível corporativo. O módulo financeiro do FinanceHub oferece contas a pagar e receber integrados às compras e vendas, DRE gerencial automatizado (demonstrativo de resultados do exercício), fluxo de caixa previsto versus realizado, e conciliação bancária por importação de arquivos OFX.',
+      desc: 'Área para organizar contas, status pago ou pendente, fluxo de caixa e registros financeiros gerados por vendas e reposições.',
       benefits: [
-        'DRE anual e mensal estruturado de forma automática.',
-        'Conciliação bancária automática com arquivos OFX.',
-        'Agendamento automático de despesas recorrentes (Aluguel, Luz).',
-        'Controle de inadimplência e envio automatizado de cobranças.'
+        'Contas a pagar e receber.',
+        'Alteração de status pago ou pendente.',
+        'Exclusão de registros financeiros.',
+        'Visão de fluxo de caixa e totais.'
       ],
-      useCase: 'O departamento financeiro importa o extrato do banco, o FinanceHub localiza os pagamentos correspondentes no contas a receber e faz a baixa automática em lote.',
+      useCase: 'O administrador registra uma conta, acompanha o vencimento e altera o status quando o pagamento é concluído.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
             <span className="mock-dot-red"></span>
             <span className="mock-dot-yellow"></span>
             <span className="mock-dot-green"></span>
-            <span className="mock-title">DRE Simplificado</span>
+            <span className="mock-title">Fluxo Financeiro</span>
           </div>
           <div className="mock-ui-content">
             <div className="dre-mock">
               <div className="dre-line"><span>(+) Receita Bruta</span> <span className="text-green">R$ 125.400,00</span></div>
-              <div className="dre-line"><span>(-) Deduções e Impostos</span> <span className="text-red">R$ 18.200,00</span></div>
+              <div className="dre-line"><span>(-) Saídas registradas</span> <span className="text-red">R$ 18.200,00</span></div>
               <div className="dre-line"><span>(-) Custo Mercadorias (CMV)</span> <span className="text-red">R$ 48.000,00</span></div>
               <div className="dre-line highlight"><span>(=) Lucro Operacional</span> <strong className="text-cyan">R$ 59.200,00</strong></div>
             </div>
@@ -227,12 +227,12 @@ export default function Funcionalidades() {
       id: 'reports',
       icon: <FileText size={20} />,
       name: 'Relatórios',
-      desc: 'Central de Business Intelligence integrada. Exporte relatórios detalhados em PDF e Excel sobre ticket médio, comissão de vendedores, curvas ABC de clientes e produtos (os mais vendidos e os que geram mais lucro), vendas por meio de pagamento e relatórios contábeis consolidados.',
+      desc: 'Central de indicadores visuais com gráficos, tabelas e resumos para acompanhar vendas, produtos, caixa e financeiro.',
       benefits: [
-        'Análise de Curva ABC para identificar produtos mais lucrativos.',
-        'Exportação rápida para PDF, Excel e formatos CSV.',
-        'Relatórios customizáveis com filtros avançados.',
-        'Cálculo automático de comissões de venda.'
+        'Gráficos e KPIs operacionais.',
+        'Resumo de formas de pagamento.',
+        'Ranking de produtos vendidos.',
+        'Apoio visual para análise do negócio.'
       ],
       useCase: 'O proprietário da empresa gera o relatório de Curva ABC de Produtos para identificar quais itens estão parados no estoque e programar uma queima de estoque.',
       mockup: (
@@ -257,14 +257,14 @@ export default function Funcionalidades() {
       id: 'registrations',
       icon: <Users size={20} />,
       name: 'Cadastros',
-      desc: 'Base de dados consolidada. Gerencie cadastros detalhados de clientes (com histórico de compras, limite de crédito e situação financeira), fornecedores (associados aos produtos comprados), transportadoras, funcionários e regras tributárias vinculadas.',
+      desc: 'Base de cadastros para clientes, fornecedores, funcionários, serviços e produtos, com formulários e edição dos principais registros.',
       benefits: [
-        'Consulta e autopreenchimento de dados por CNPJ.',
-        'Limite de crédito configurável por cliente.',
-        'Histórico detalhado de faturamento por cliente.',
-        'Registro de tabelas tributárias padrão.'
+        'Cadastro de clientes.',
+        'Cadastro de fornecedores.',
+        'Cadastro de funcionários e operadores.',
+        'Edição dos registros principais.'
       ],
-      useCase: 'Ao cadastrar uma nova empresa parceira, a secretária digita apenas o CNPJ, e o FinanceHub preenche o endereço completo, razão social e situação cadastral consultando a Receita Federal.',
+      useCase: 'O administrador cadastra cliente, produto ou fornecedor e usa esses dados nos fluxos de venda, compra e financeiro.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -276,7 +276,7 @@ export default function Funcionalidades() {
           <div className="mock-ui-content">
             <div className="customer-card">
               <strong>Alfa Distribuidores Ltda</strong>
-              <span>CNPJ: 12.345.678/0001-90</span>
+              <span>Email: contato@empresa.com</span>
               <div className="credit-bar">
                 <span>Limite Crédito: R$ 10.000</span>
                 <div className="bar-fill" style={{ width: '65%' }}></div>
@@ -290,14 +290,14 @@ export default function Funcionalidades() {
       id: 'logistics',
       icon: <Truck size={20} />,
       name: 'Logística e Fretes',
-      desc: 'Integração logística completa do pedido ao destino. Calcule fretes em tempo real diretamente nas telas de vendas ou pedidos de compra, gere etiquetas de envio padronizadas, controle lotes de postagem e rastreie entregas em andamento através de integrações nativas com os Correios e transportadoras parceiras.',
+      desc: 'Módulo para montar rotas e estimar frete usando mapa real. Aceita CEP, endereço completo, preenchimento automático por CEP e mais de uma entrega na mesma rota.',
       benefits: [
-        'Cálculo de frete multi-transportadora integrado.',
-        'Impressão em lote de etiquetas de despacho (PLP).',
-        'Rastreamento automatizado de códigos de entrega.',
-        'Controle de entrega própria com rotas sugeridas.'
+        'Mapa real com OpenStreetMap e Leaflet.',
+        'Busca de endereço por CEP com ViaCEP/BrasilAPI.',
+        'Validação de cidade e estado para evitar marcações erradas.',
+        'Rotas com múltiplas entregas.'
       ],
-      useCase: 'O faturista fecha uma venda para outro estado, o FinanceHub cota o frete mais barato em três transportadoras, emite a etiqueta de despacho e envia o link de rastreamento por e-mail ao comprador.',
+      useCase: 'O usuário informa origem e entregas. O mapa marca os pontos corretos e calcula uma rota visual para apoiar a entrega.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -308,9 +308,9 @@ export default function Funcionalidades() {
           </div>
           <div className="mock-ui-content flex-col">
             <div className="logistics-quote">
-              <div className="quote-item active"><span>Jadlog Express</span> <strong>2 dias - R$ 24,90</strong></div>
-              <div className="quote-item"><span>Correios Pac</span> <strong>6 dias - R$ 18,20</strong></div>
-              <div className="quote-item"><span>Loggi Entregas</span> <strong>1 dia - R$ 38,00</strong></div>
+              <div className="quote-item active"><span>Rota principal</span> <strong>Entrega 1 - validada</strong></div>
+              <div className="quote-item"><span>Entrega adicional</span> <strong>CEP preenchido</strong></div>
+              <div className="quote-item"><span>Frete estimado</span> <strong>Distância + peso</strong></div>
             </div>
           </div>
         </div>
@@ -319,26 +319,26 @@ export default function Funcionalidades() {
     {
       id: 'assistant',
       icon: <MessageSquare size={20} />,
-      name: 'Assistente Virtual AI',
-      desc: 'Insights inteligentes de negócios alimentados por IA. O assistente virtual do FinanceHub analisa seus dados de vendas e despesas em background e responde perguntas de linguagem natural. Saiba instantaneamente qual filial está performando melhor, qual margem média dos seus produtos ou peça sugestões de corte de custos.',
+      name: 'Assistente Operacional',
+      desc: 'Assistente por consultas estruturadas. Ele interpreta comandos simples por palavras-chave e retorna informações operacionais, sem prometer IA generativa completa.',
       benefits: [
-        'Interação por chat com dados reais da sua empresa.',
-        'Projeção de caixa para os próximos meses.',
-        'Sugestões inteligentes de quantidade de compras.',
-        'Alertas preditivos de risco de capital de giro.'
+        'Consultas por exemplos prontos.',
+        'Busca de produto mais vendido.',
+        'Respostas baseadas em dados operacionais.',
+        'Apoio rápido para perguntas recorrentes.'
       ],
-      useCase: 'O empresário digita na central de ajuda: "Qual foi o meu produto mais lucrativo na semana passada?" e a IA responde: "Foi o Copo Térmico Inox, com R$ 3.200 em lucro líquido e margem de 42%".',
+      useCase: 'O usuário seleciona uma consulta como "produto mais vendido do mês" e o sistema retorna uma resposta baseada nos registros disponíveis.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
             <span className="mock-dot-red"></span>
             <span className="mock-dot-yellow"></span>
             <span className="mock-dot-green"></span>
-            <span className="mock-title">Assistente FinanceHub AI</span>
+            <span className="mock-title">Assistente FinanceHub</span>
           </div>
           <div className="mock-ui-content chat-style">
-            <div className="chat-msg user">Qual filial faturou mais hoje?</div>
-            <div className="chat-msg ai">A Filial 02 lidera hoje com <strong>R$ 8.920,00</strong> em vendas (48% do total).</div>
+            <div className="chat-msg user">Produto mais vendido do mês</div>
+            <div className="chat-msg ai">Consulta convertida: <strong>topProducts(month)</strong></div>
           </div>
         </div>
       )
@@ -346,28 +346,28 @@ export default function Funcionalidades() {
     {
       id: 'multi',
       icon: <Building2 size={20} />,
-      name: 'Sistema Multiempresa',
-      desc: 'Gerenciamento completo para redes, franquias ou múltiplos negócios. Cadastre diferentes CNPJs (matriz e filiais) no mesmo sistema. Faça transferências de estoque seguras entre unidades, emita notas de transferência, consulte saldos de outras filiais em tempo real e emita relatórios unificados para a contabilidade.',
+      name: 'Organização por Empresa',
+      desc: 'Cada cadastro autenticado possui uma organização no Supabase. Os dados operacionais são carregados para essa empresa, evitando misturar informações de contas diferentes.',
       benefits: [
-        'Controle centralizado de estoques de múltiplas lojas.',
-        'DRE consolidado ou individual por CNPJ.',
-        'Transferência fácil de produtos entre filiais.',
-        'Permissões de acesso distintas por filial e usuário.'
+        'Conta vinculada a uma organização.',
+        'Dados isolados por empresa autenticada.',
+        'Base preparada para evoluir para multiusuário.',
+        'Sessão persistente com Supabase Auth.'
       ],
-      useCase: 'Um cliente chega na Filial 1 procurando um calçado tamanho 40 que está esgotado ali. O vendedor faz uma busca rápida no FinanceHub e descobre que a Filial 2, a 5km dali, possui 3 unidades em estoque.',
+      useCase: 'Uma nova conta começa vazia e passa a carregar somente os dados salvos no banco da sua própria organização.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
             <span className="mock-dot-red"></span>
             <span className="mock-dot-yellow"></span>
             <span className="mock-dot-green"></span>
-            <span className="mock-title">Visão Multiempresa</span>
+            <span className="mock-title">Organização da Conta</span>
           </div>
           <div className="mock-ui-content">
             <div className="multi-list">
-              <div className="multi-row"><span>Matriz (São Paulo)</span> <strong>Ativa</strong></div>
-              <div className="multi-row"><span>Filial 01 (Campinas)</span> <strong>Ativa</strong></div>
-              <div className="multi-row"><span>Filial 02 (Santos)</span> <strong className="text-cyan">Sincronizando</strong></div>
+              <div className="multi-row"><span>Empresa autenticada</span> <strong>Ativa</strong></div>
+              <div className="multi-row"><span>Dados operacionais</span> <strong>Supabase</strong></div>
+              <div className="multi-row"><span>Sessão</span> <strong className="text-cyan">Persistente</strong></div>
             </div>
           </div>
         </div>
@@ -386,7 +386,7 @@ export default function Funcionalidades() {
         <div className="badge">Módulos do Sistema</div>
         <h1 className="page-title text-gradient">Funcionalidades do FinanceHub</h1>
         <p className="page-subtitle">
-          Explore os recursos completos e veja como as ferramentas integradas impulsionam o controle financeiro, tributário e operacional do seu negócio.
+          Explore os recursos atuais do sistema: gestão comercial, estoque, financeiro, pedidos, frete, agenda e dados conectados ao Supabase.
         </p>
       </div>
 
@@ -415,7 +415,7 @@ export default function Funcionalidades() {
                 <span className="detail-icon-bg">{activeModuleData.icon}</span>
                 <h2>{activeModuleData.name}</h2>
               </div>
-              <span className="badge">Módulo Premium</span>
+              <span className="badge">Módulo atual</span>
             </div>
 
             <div className="detail-body-grid">

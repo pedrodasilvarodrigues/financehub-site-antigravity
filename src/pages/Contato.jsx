@@ -50,7 +50,7 @@ export default function Contato() {
         <div className="badge">Fale Conosco</div>
         <h1 className="page-title text-gradient">Contato Institucional</h1>
         <p className="page-subtitle">
-          Dúvidas comerciais sobre planos? Solicite uma proposta customizada para sua empresa ou fale com a nossa equipe.
+          Dúvidas sobre o projeto? Use o formulário demonstrativo para registrar uma mensagem local na interface.
         </p>
       </div>
 
@@ -62,7 +62,7 @@ export default function Contato() {
               <ShieldCheck size={20} className="text-green" />
               <div>
                 <strong>Mensagem enviada com sucesso!</strong>
-                <p>Nossa equipe entrará em contato em até 4 horas úteis.</p>
+                <p>Mensagem registrada na interface demonstrativa do site.</p>
               </div>
             </div>
           )}
@@ -120,9 +120,9 @@ export default function Contato() {
                 className="form-input"
                 style={{ backgroundColor: 'var(--input-bg)' }}
               >
-                <option value="comercial">Departamento Comercial (Planos & Preços)</option>
-                <option value="parcerias">Parcerias e Franquias</option>
-                <option value="imprensa">Assessoria de Imprensa</option>
+                <option value="comercial">Informações sobre o projeto</option>
+                <option value="parcerias">Sugestões de evolução</option>
+                <option value="imprensa">Documentação do TCC</option>
                 <option value="outros">Outros Assuntos</option>
               </select>
             </div>
@@ -157,34 +157,34 @@ export default function Contato() {
         {/* Contact Info Details */}
         <div className="contact-details-col">
           <div className="glass-card detail-info-box">
-            <h3>Informações Oficiais</h3>
-            <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>Fale diretamente com nossa sede administrativa de segunda a sexta, das 8h às 18h.</p>
+            <h3>Informações do Projeto</h3>
+            <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>Este site é institucional e demonstrativo. Os canais abaixo descrevem o estado atual do projeto.</p>
             
             <div className="info-list">
               <div className="info-item">
                 <Mail size={20} className="text-cyan" />
                 <div>
-                  <strong>Canais de E-mail</strong>
-                  <span>comercial@financehub.com.br</span>
-                  <span>suporte@financehub.com.br</span>
+                  <strong>Repositório</strong>
+                  <span>GitHub: pedrodasilvarodrigues</span>
+                  <span>Projeto: financehub-site-antigravity</span>
                 </div>
               </div>
 
               <div className="info-item">
                 <Phone size={20} className="text-purple" />
                 <div>
-                  <strong>Central Telefônica</strong>
-                  <span>0800 591 2940 (Ligação gratuita)</span>
-                  <span>(11) 4003-8822 (WhatsApp)</span>
+                  <strong>Publicação</strong>
+                  <span>Site institucional na Vercel</span>
+                  <span>Sistema principal em financehub-tcc.vercel.app</span>
                 </div>
               </div>
 
               <div className="info-item">
                 <MapPin size={20} className="text-orange" />
                 <div>
-                  <strong>Endereço de Correspondência</strong>
-                  <span>Av. Paulista, 1000 - 14º Andar</span>
-                  <span>Bela Vista - São Paulo, SP - CEP 01310-100</span>
+                  <strong>Contexto</strong>
+                  <span>Projeto acadêmico / TCC</span>
+                  <span>Aplicativo Windows publicado via GitHub Releases</span>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Contato() {
             <MessageSquare size={24} className="text-green" />
             <div>
               <h4>Compromisso de Resposta</h4>
-              <p>Nossa equipe responde a todos os contatos comerciais e dúvidas institucionais em menos de 4 horas úteis.</p>
+              <p>O formulário é demonstrativo e ajuda a apresentar como uma área de contato poderia funcionar.</p>
             </div>
           </div>
         </div>

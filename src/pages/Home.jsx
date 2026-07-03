@@ -12,40 +12,40 @@ export default function Home({ setCurrentPage }) {
   const benefits = [
     {
       icon: <TrendingUp size={24} className="icon-cyan" />,
-      title: 'Precificação Inteligente',
-      desc: 'Cálculo de margem, markup e ponto de equilíbrio automatizado para garantir lucro em cada venda.'
+      title: 'Precificação e Margem',
+      desc: 'Ferramentas para simular custos, margem e preço de venda dentro do fluxo de produtos.'
     },
     {
       icon: <Layers size={24} className="icon-purple" />,
-      title: 'Sistema Multiempresa',
-      desc: 'Gerencie matriz, filiais e franquias de forma unificada, com relatórios individuais e consolidados.'
+      title: 'Dados por Empresa',
+      desc: 'Contas autenticadas pelo Supabase, com dados carregados por organização.'
     },
     {
       icon: <Zap size={24} className="icon-orange" />,
-      title: 'PDV Integrado Rápido',
-      desc: 'Frente de caixa ágil, offline, com emissão de notas fiscais instantânea e baixa de estoque imediata.'
+      title: 'PDV Integrado',
+      desc: 'Registro de vendas com validação de caixa aberto, baixa de estoque e histórico.'
     },
     {
       icon: <BarChart3 size={24} className="icon-indigo" />,
-      title: 'Gestão Financeira Completa',
-      desc: 'Fluxo de caixa, DRE gerencial, contas a pagar e receber, e conciliação bancária automática.'
+      title: 'Gestão Financeira',
+      desc: 'Controle de lançamentos, status pago/pendente, fluxo de caixa e indicadores visuais.'
     },
     {
       icon: <Box size={24} className="icon-green" />,
       title: 'Controle de Estoque',
-      desc: 'Gestão de compras, grades de produtos, controle de lote e inventário automatizado.'
+      desc: 'Produtos com estoque baixo ganham destaque e podem gerar reposição com fornecedor.'
     },
     {
       icon: <ShieldCheck size={24} className="icon-blue" />,
-      title: 'Logística & Fretes Integrados',
-      desc: 'Cálculo de frete em tempo real, rastreamento de entregas e integrações com Correios e transportadoras.'
+      title: 'Logística & Fretes',
+      desc: 'Mapa real, CEP automático, endereço completo e rotas com uma ou mais entregas.'
     }
   ];
 
   const screenshots = [
     {
       title: 'Dashboard Executivo',
-      desc: 'Visão consolidada do faturamento, contas a receber, lucratividade e principais indicadores em tempo real.',
+      desc: 'Visão objetiva de vendas, caixa, estoque, financeiro e indicadores salvos no banco.',
       color: 'gradient-cyan-blue',
       elements: (
         <div className="mock-ui">
@@ -58,12 +58,12 @@ export default function Home({ setCurrentPage }) {
           <div className="mock-body">
             <div className="mock-stats-grid">
               <div className="mock-stat-card">
-                <span>Receita Mensal</span>
+                <span>Vendas do Período</span>
                 <strong className="text-cyan">R$ 142.850,00</strong>
                 <span className="stat-perc positive">+12.4%</span>
               </div>
               <div className="mock-stat-card">
-                <span>Margem Média</span>
+                <span>Ticket Médio</span>
                 <strong className="text-purple">34.2%</strong>
                 <span className="stat-perc positive">+2.1%</span>
               </div>
@@ -81,7 +81,7 @@ export default function Home({ setCurrentPage }) {
     },
     {
       title: 'Frente de Caixa (PDV)',
-      desc: 'Interface ultraveloz para o operador de caixa. Emissão fiscal e recebimento PIX integrados em segundos.',
+      desc: 'Interface para registrar vendas, selecionar produto, pagamento, desconto e atualizar estoque.',
       color: 'gradient-purple-accent',
       elements: (
         <div className="mock-ui">
@@ -114,7 +114,7 @@ export default function Home({ setCurrentPage }) {
     },
     {
       title: 'Motor de Precificação',
-      desc: 'Simulador inteligente que sugere o preço de venda ideal baseado em custos tributários, operacionais e margem desejada.',
+      desc: 'Área para analisar custo, margem e preço de venda sem depender de planilhas externas.',
       color: 'gradient-orange-red',
       elements: (
         <div className="mock-ui">
@@ -131,11 +131,11 @@ export default function Home({ setCurrentPage }) {
                 <span className="pricing-val">R$ 120,00</span>
               </div>
               <div className="pricing-row">
-                <span>ICMS / Impostos</span>
+                <span>Custos adicionais</span>
                 <span className="pricing-val text-red">18.0%</span>
               </div>
               <div className="pricing-row highlight">
-                <span>Preço Sugerido</span>
+                <span>Preço sugerido</span>
                 <strong className="pricing-val text-green">R$ 218,50</strong>
               </div>
             </div>
@@ -154,13 +154,13 @@ export default function Home({ setCurrentPage }) {
       <section className="hero-section container">
         <div className="hero-content animate-fade-in">
           <div className="hero-badge badge">
-            <span>Disponível versão 3.4.0</span>
+            <span>Disponível versão 1.0.0</span>
           </div>
           <h1 className="hero-title text-gradient">
-            A gestão financeira e operacional mais potente da sua empresa
+            Gestão financeira e operacional para o seu negócio
           </h1>
           <p className="hero-subtitle">
-            O FinanceHub unifica PDV ágil, precificação de alta precisão, controle total de estoques e logística multiempresa em uma plataforma robusta e de alta performance.
+            O FinanceHub reúne PDV, produtos, estoque, pedidos, caixa, financeiro, relatórios, agenda e logística em uma plataforma web conectada ao Supabase.
           </p>
           <div className="hero-actions-btns">
             <button onClick={() => handleNavClick('downloads')} className="btn btn-primary">
@@ -183,7 +183,7 @@ export default function Home({ setCurrentPage }) {
                 <span className="w-dot yellow"></span>
                 <span className="w-dot green"></span>
               </div>
-              <div className="window-address">financehub-desktop-v3.4.exe</div>
+              <div className="window-address">FinanceHub-Setup-1.0.0.exe</div>
             </div>
             <div className="window-body">
               {/* Simulation of operational screen */}
@@ -240,7 +240,7 @@ export default function Home({ setCurrentPage }) {
           <div className="section-header text-center">
             <h2 className="section-title">Por que escolher o FinanceHub?</h2>
             <p className="section-desc">
-              Uma ferramenta desenhada para eliminar planilhas bagunçadas, processos manuais e softwares desintegrados.
+              Uma ferramenta desenhada para reduzir planilhas soltas, telas confusas e processos manuais.
             </p>
           </div>
 
@@ -263,7 +263,7 @@ export default function Home({ setCurrentPage }) {
         <div className="section-header text-center">
           <h2 className="section-title">O FinanceHub em ação</h2>
           <p className="section-desc">
-            Assista à nossa demonstração guiada de 2 minutos e veja como operar seu caixa, gerenciar compras e calcular sua lucratividade.
+            Veja como o sistema organiza vendas, produtos, pedidos, estoque, financeiro e frete em uma experiência desktop-first.
           </p>
         </div>
 
@@ -298,7 +298,7 @@ export default function Home({ setCurrentPage }) {
           <div className="section-header text-center">
             <h2 className="section-title">Uma experiência visual refinada</h2>
             <p className="section-desc">
-              Telas limpas, focadas no operador e projetadas para evitar erros de digitação e digitação excessiva.
+              Telas limpas, focadas em operação desktop e projetadas para reduzir erros de cadastro e navegação.
             </p>
           </div>
 
@@ -325,7 +325,7 @@ export default function Home({ setCurrentPage }) {
           <div className="cta-content">
             <h2>Pronto para transformar a gestão da sua empresa?</h2>
             <p>
-              Baixe a versão de testes gratuita hoje mesmo. Instalação rápida em menos de 1 minuto.
+              Baixe o instalador Windows ou acesse a versão online publicada na Vercel.
             </p>
             <div className="cta-buttons">
               <button onClick={() => handleNavClick('downloads')} className="btn btn-primary">

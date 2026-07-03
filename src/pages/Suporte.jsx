@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  HelpCircle, MessageSquare, Terminal, FileText, 
-  Search, CheckCircle2, AlertTriangle, ShieldCheck, Play 
+import {
+  HelpCircle, MessageSquare, Terminal, FileText,
+  Search, CheckCircle2, AlertTriangle, ShieldCheck, Play
 } from 'lucide-react';
 import './Suporte.css';
 
@@ -9,7 +9,7 @@ export default function Suporte() {
   const [searchQuery, setSearchQuery] = useState('');
   const [ticketData, setTicketData] = useState({
     email: '',
-    modulo: 'fiscal',
+    modulo: 'login',
     prioridade: 'normal',
     descricao: ''
   });
@@ -17,16 +17,16 @@ export default function Suporte() {
   const [ticketId, setTicketId] = useState(null);
 
   const tutorials = [
-    { title: 'Como configurar o Certificado Digital A1', category: 'Fiscal', link: '#/documentacao' },
-    { title: 'Importando cadastro de produtos em lote (.xlsx)', category: 'Produtos', link: '#/documentacao' },
-    { title: 'Como abrir e fechar o caixa do PDV', category: 'PDV', link: '#/documentacao' },
-    { title: 'Conectando múltiplas lojas (Multiempresa)', category: 'Redes', link: '#/documentacao' },
-    { title: 'Configurando Pix dinâmico no caixa', category: 'PDV', link: '#/documentacao' },
-    { title: 'Configuração de alíquotas de impostos por produto', category: 'Fiscal', link: '#/documentacao' }
+    { title: 'Como baixar o instalador Windows', category: 'Download', link: '#/downloads' },
+    { title: 'Como entrar com email e senha', category: 'Login', link: '#/documentacao' },
+    { title: 'Como abrir e fechar o caixa', category: 'Caixa', link: '#/documentacao' },
+    { title: 'Como cadastrar produtos e controlar estoque', category: 'Produtos', link: '#/documentacao' },
+    { title: 'Como usar CEP e endereço no frete', category: 'Frete', link: '#/documentacao' },
+    { title: 'Como consultar pedidos por status', category: 'Pedidos', link: '#/documentacao' }
   ];
 
-  const filteredTutorials = tutorials.filter(t => 
-    t.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+  const filteredTutorials = tutorials.filter(t =>
+    t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     t.category.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -50,11 +50,11 @@ export default function Suporte() {
       setTicketId(generatedId);
       setTicketData({
         email: '',
-        modulo: 'fiscal',
+        modulo: 'login',
         prioridade: 'normal',
         descricao: ''
       });
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -63,14 +63,13 @@ export default function Suporte() {
       <div className="glow-spot-secondary" style={{ bottom: '15%', right: '15%' }}></div>
 
       <div className="section-header text-center animate-fade-in">
-        <div className="badge">Suporte Técnico</div>
-        <h1 className="page-title text-gradient">Central de Suporte</h1>
+        <div className="badge">Suporte do Projeto</div>
+        <h1 className="page-title text-gradient">Central de Ajuda</h1>
         <p className="page-subtitle">
-          Precisa de ajuda com o FinanceHub? Busque na base de conhecimento ou abra um chamado direto para nosso time técnico.
+          Consulte guias sobre a versão atual do FinanceHub ou registre uma solicitação demonstrativa para acompanhamento do TCC.
         </p>
       </div>
 
-      {/* Search Base de Conhecimento */}
       <div className="support-search-section glass-card">
         <div className="search-header-group">
           <h2>Base de Conhecimento & Tutoriais</h2>
@@ -81,7 +80,7 @@ export default function Suporte() {
           <Search className="search-icon" size={20} />
           <input
             type="text"
-            placeholder="Pesquise por temas (ex: Certificado, Impostos, Caixa, Lote)..."
+            placeholder="Pesquise por temas (ex: Login, Caixa, Produtos, Frete)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="form-input search-input-field"
@@ -106,26 +105,26 @@ export default function Suporte() {
         </div>
       </div>
 
-      {/* Opening Ticket and Tech Contact Grid */}
       <div className="ticket-support-grid section-padding">
-        {/* Ticket Form */}
         <div className="glass-card ticket-form-card">
-          <h2>Abrir Chamado Técnico</h2>
-          <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>Descreva seu problema com detalhes e anexe logs se necessário. Retorno em até 2 horas.</p>
+          <h2>Registrar Solicitação</h2>
+          <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>
+            Este formulário é demonstrativo e registra um protocolo visual para apresentação. Ele não envia suporte real externo.
+          </p>
 
           {ticketId && (
             <div className="ticket-success-alert animate-fade-in">
               <ShieldCheck size={24} className="text-green" />
               <div>
-                <strong>Chamado Aberto com Sucesso!</strong>
-                <p>O código do seu chamado é: <strong className="text-cyan">{ticketId}</strong>. Acompanhe a resposta no seu e-mail.</p>
+                <strong>Solicitação registrada!</strong>
+                <p>O código gerado é: <strong className="text-cyan">{ticketId}</strong>.</p>
               </div>
             </div>
           )}
 
           <form onSubmit={handleTicketSubmit} className="ticket-form">
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Seu E-mail Corporativo *</label>
+              <label htmlFor="email" className="form-label">Seu E-mail *</label>
               <input
                 type="email"
                 id="email"
@@ -149,16 +148,17 @@ export default function Suporte() {
                   className="form-input"
                   style={{ backgroundColor: 'var(--input-bg)' }}
                 >
-                  <option value="fiscal">Faturamento / Emissão Fiscal</option>
-                  <option value="pdv">Frente de Caixa (PDV)</option>
-                  <option value="financeiro">Financeiro / OFX / DRE</option>
+                  <option value="login">Login / Supabase</option>
+                  <option value="pdv">Vendas / PDV</option>
+                  <option value="financeiro">Financeiro</option>
                   <option value="estoque">Estoque e Produtos</option>
-                  <option value="instalacao">Instalação e Banco de Dados</option>
+                  <option value="frete">Logística e Frete</option>
+                  <option value="desktop">Aplicativo Windows</option>
                 </select>
               </div>
 
               <div className="form-group">
-                <label htmlFor="prioridade" className="form-label">Prioridade de Suporte</label>
+                <label htmlFor="prioridade" className="form-label">Prioridade</label>
                 <select
                   id="prioridade"
                   name="prioridade"
@@ -167,15 +167,15 @@ export default function Suporte() {
                   className="form-input"
                   style={{ backgroundColor: 'var(--input-bg)' }}
                 >
-                  <option value="normal">Normal (Até 4 horas)</option>
-                  <option value="alta">Alta - Caixa Parado (Até 1 hora)</option>
-                  <option value="critica">Crítica - Sistema não Inicia (Imediato)</option>
+                  <option value="normal">Normal</option>
+                  <option value="alta">Alta</option>
+                  <option value="critica">Crítica</option>
                 </select>
               </div>
             </div>
 
             <div className="form-group">
-              <label htmlFor="descricao" className="form-label">Descrição do Problema *</label>
+              <label htmlFor="descricao" className="form-label">Descrição *</label>
               <textarea
                 id="descricao"
                 name="descricao"
@@ -183,48 +183,49 @@ export default function Suporte() {
                 rows={5}
                 value={ticketData.descricao}
                 onChange={handleTicketChange}
-                placeholder="Descreva o que acontece. Caso apareça algum código de erro, insira aqui."
+                placeholder="Descreva o que acontece no sistema."
                 className="form-textarea"
               ></textarea>
             </div>
 
             <button type="submit" disabled={loading} className="btn btn-primary w-full">
-              {loading ? <span>Registrando chamado...</span> : <span>Abrir Chamado</span>}
+              {loading ? <span>Registrando...</span> : <span>Registrar Solicitação</span>}
             </button>
           </form>
         </div>
 
-        {/* Support channels */}
         <div className="tech-channels-col">
           <div className="glass-card contact-support-box">
-            <h3>Contatos Técnicos de Plantão</h3>
-            <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>Para situações críticas onde frentes de caixa estão paradas, utilize nossos contatos diretos.</p>
+            <h3>Informações Úteis</h3>
+            <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>
+              A versão atual é um projeto de TCC. Para testes, use os links oficiais do GitHub e da Vercel.
+            </p>
 
             <div className="support-channels-list">
               <div className="channel-item">
                 <MessageSquare className="text-cyan" size={20} />
                 <div>
-                  <strong>WhatsApp de Plantão</strong>
-                  <span>(11) 99882-1002 (Apenas Caixa Parado)</span>
-                  <span>Disponível de Segunda a Domingo 24h</span>
+                  <strong>Site online</strong>
+                  <span>financehub-tcc.vercel.app</span>
+                  <span>Versão principal do sistema.</span>
                 </div>
               </div>
 
               <div className="channel-item">
                 <Terminal className="text-purple" size={20} />
                 <div>
-                  <strong>Acesso Remoto</strong>
-                  <span>Tenha o TeamViewer ou AnyDesk instalado.</span>
-                  <span>Nossos técnicos solicitarão o ID de acesso.</span>
+                  <strong>Aplicativo Windows</strong>
+                  <span>FinanceHub-Setup-1.0.0.exe</span>
+                  <span>Publicado no GitHub Releases.</span>
                 </div>
               </div>
 
               <div className="channel-item">
                 <FileText className="text-orange" size={20} />
                 <div>
-                  <strong>Tempo de SLA</strong>
-                  <span>Plano Profissional: Atendimento em até 1h.</span>
-                  <span>Plano Básico: Atendimento em até 4h.</span>
+                  <strong>Dados</strong>
+                  <span>Login e persistência via Supabase.</span>
+                  <span>Dados isolados por organização.</span>
                 </div>
               </div>
             </div>

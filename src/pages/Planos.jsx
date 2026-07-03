@@ -3,85 +3,80 @@ import { Check, X, HelpCircle } from 'lucide-react';
 import './Planos.css';
 
 export default function Planos() {
-  const [billingCycle, setBillingCycle] = useState('mensal'); // 'mensal' ou 'anual'
+  const [billingCycle, setBillingCycle] = useState('mensal');
 
   const plans = [
     {
-      name: 'Básico',
-      desc: 'Ideal para MEIs e comércios locais que estão começando a organizar suas finanças.',
-      priceMensal: 'R$ 99',
-      priceAnual: 'R$ 79',
+      name: 'Versão TCC',
+      desc: 'Versão atual do projeto FinanceHub para apresentação, testes e validação dos fluxos principais.',
+      priceMensal: 'Gratuito',
+      priceAnual: 'Gratuito',
       features: [
-        '1 Licença Caixa (PDV)',
-        'Controle de Caixa e Gaveta',
-        'Gestão de Produtos e Grade Básica',
-        'Faturamento Fiscal (NFC-e/NF-e)',
-        'Controle Financeiro Simples',
-        'Suporte por E-mail (24h)'
+        'Acesso ao sistema web publicado na Vercel',
+        'Instalador Windows com Electron',
+        'Login e cadastro com Supabase',
+        'Vendas, PDV, produtos, estoque e caixa',
+        'Pedidos, financeiro, relatórios, agenda e frete',
+        'Dados operacionais por organização'
       ],
       notIncluded: [
-        'Sistema Multiempresa',
-        'Motor de Precificação Avançado',
-        'Integração Logística e Fretes',
-        'Assistente Virtual AI',
-        'Conciliação Bancária OFX'
+        'Cobrança real por assinatura',
+        'Emissão fiscal homologada',
+        'Integrações automáticas de pagamento',
+        'Conciliação bancária automática'
       ],
-      cta: 'Assinar Plano Básico',
-      popular: false
-    },
-    {
-      name: 'Profissional',
-      desc: 'O plano recomendado para lojas físicas em expansão e empresas que exigem controle total de estoque e lucro.',
-      priceMensal: 'R$ 199',
-      priceAnual: 'R$ 159',
-      features: [
-        'Licenças PDV Ilimitadas',
-        'Controle de Caixa Multioperador',
-        'Gestão de Produtos, Lotes e Grade Complexa',
-        'Faturamento Fiscal Completo',
-        'Financeiro Completo (DRE + OFX)',
-        'Motor de Precificação Inteligente',
-        'Sistema Multiempresa (Até 3 filiais)',
-        'Integração Logística e Fretes',
-        'Assistente Virtual AI (250 consultas/mês)',
-        'Suporte Prioritário via Chat & Whats'
-      ],
-      notIncluded: [],
-      cta: 'Assinar Plano Profissional',
+      cta: 'Usar versão atual',
       popular: true
     },
     {
-      name: 'Enterprise',
-      desc: 'Solução sob medida para redes de franquias, atacadistas e grandes redes de lojas.',
-      priceMensal: 'Personalizado',
-      priceAnual: 'Personalizado',
+      name: 'Evolução Comercial',
+      desc: 'Ideia futura para transformar o protótipo em produto com cobrança, permissões e recursos avançados.',
+      priceMensal: 'Planejado',
+      priceAnual: 'Planejado',
       features: [
-        'Tudo do Plano Profissional',
-        'Multiempresa Ilimitada',
-        'Assistente Virtual AI Ilimitado',
-        'Servidor em Nuvem Dedicado',
-        'API de Integração Customizada',
-        'Gerente de Conta Dedicado',
-        'Treinamento de Equipe On-boarding',
-        'Suporte 24/7 com SLA de 1h'
+        'Planos e limites de uso',
+        'Permissões por usuário',
+        'Tabelas relacionais por módulo',
+        'Relatórios exportáveis',
+        'Rotas por API externa',
+        'Integrações comerciais validadas'
+      ],
+      notIncluded: [
+        'Ainda não disponível na versão atual'
+      ],
+      cta: 'Em planejamento',
+      popular: false
+    },
+    {
+      name: 'Recursos Futuros',
+      desc: 'Funcionalidades que podem ser adicionadas depois que o protótipo estabilizar.',
+      priceMensal: 'Futuro',
+      priceAnual: 'Futuro',
+      features: [
+        'OAuth Google com redirects finais configurados',
+        'Proteção contra senhas vazadas no Supabase Auth',
+        'Exportação real de relatórios em PDF',
+        'Cálculo real de rotas por API externa',
+        'Migração do JSON operacional para tabelas relacionais',
+        'Permissões multiusuário completas'
       ],
       notIncluded: [],
-      cta: 'Contatar Vendas',
+      cta: 'Roadmap',
       popular: false
     }
   ];
 
   const comparisons = [
-    { name: 'Licenças de PDV (Frente de Caixa)', basic: '1 Caixa', pro: 'Ilimitados', enterprise: 'Ilimitados' },
-    { name: 'Emissão de Notas Fiscais (NFCe/NFe)', basic: 'Sim', pro: 'Sim', enterprise: 'Sim' },
-    { name: 'Gestão de Grade e Variações', basic: 'Básico', pro: 'Avançado', enterprise: 'Avançado' },
-    { name: 'Motor de Precificação Tributária', basic: 'Não', pro: 'Sim', enterprise: 'Sim' },
-    { name: 'Controle de Lotes e Validades', basic: 'Não', pro: 'Sim', enterprise: 'Sim' },
-    { name: 'Sincronização Multiempresa', basic: 'Não', pro: 'Até 3 Filiais', enterprise: 'Ilimitado' },
-    { name: 'DRE & Conciliação OFX', basic: 'Não', pro: 'Sim', enterprise: 'Sim' },
-    { name: 'Cotação de Frete & Logística', basic: 'Não', pro: 'Sim', enterprise: 'Sim' },
-    { name: 'Assistente AI', basic: 'Não', pro: '250 consultas', enterprise: 'Ilimitado' },
-    { name: 'Suporte Técnico', basic: 'E-mail (24h)', pro: 'Chat Prioritário', enterprise: 'SLA Dedicado 24/7' },
+    { name: 'Sistema web React + Vite', basic: 'Sim', pro: 'Sim', enterprise: 'Sim' },
+    { name: 'Aplicativo Windows Electron', basic: 'Sim', pro: 'Sim', enterprise: 'Sim' },
+    { name: 'Supabase Auth e dados por organização', basic: 'Sim', pro: 'Sim', enterprise: 'Sim' },
+    { name: 'PDV, estoque, financeiro e pedidos', basic: 'Sim', pro: 'Sim', enterprise: 'Sim' },
+    { name: 'Emissão fiscal real', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
+    { name: 'Integrações automáticas de pagamento', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
+    { name: 'Conciliação bancária automática', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
+    { name: 'Rotas por API externa', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
+    { name: 'Cobrança por assinatura', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
+    { name: 'Suporte com SLA comercial', basic: 'Não', pro: 'Planejado', enterprise: 'Planejado' },
   ];
 
   return (
@@ -90,34 +85,32 @@ export default function Planos() {
       <div className="glow-spot-secondary" style={{ bottom: '10%', left: '10%' }}></div>
 
       <div className="section-header text-center animate-fade-in">
-        <div className="badge">Tabela de Preços</div>
-        <h1 className="page-title text-gradient">Planos Transparentes</h1>
+        <div className="badge">Disponibilidade</div>
+        <h1 className="page-title text-gradient">Versões e Roadmap</h1>
         <p className="page-subtitle">
-          Escolha o plano ideal para a sua estrutura comercial. Sem taxas ocultas, cancele quando quiser.
+          A versão atual do FinanceHub é um projeto funcional para TCC. Esta página mostra o que existe hoje e o que pode evoluir no futuro.
         </p>
 
-        {/* Billing cycle switch */}
         <div className="billing-cycle-switch">
           <button
             onClick={() => setBillingCycle('mensal')}
             className={`switch-btn ${billingCycle === 'mensal' ? 'active' : ''}`}
           >
-            Mensal
+            Atual
           </button>
           <button
             onClick={() => setBillingCycle('anual')}
             className={`switch-btn ${billingCycle === 'anual' ? 'active' : ''}`}
           >
-            Anual <span className="discount-tag">Salvar 20%</span>
+            Futuro <span className="discount-tag">Roadmap</span>
           </button>
         </div>
       </div>
 
-      {/* Plans grid cards */}
       <div className="plans-grid animate-fade-in">
         {plans.map((p, i) => (
           <div key={i} className={`glass-card plan-card ${p.popular ? 'popular' : ''}`}>
-            {p.popular && <span className="popular-badge">Mais Escolhido</span>}
+            {p.popular && <span className="popular-badge">Versão Atual</span>}
             <div className="plan-header">
               <h3>{p.name}</h3>
               <p>{p.desc}</p>
@@ -125,7 +118,7 @@ export default function Planos() {
                 <span className="price-num">
                   {billingCycle === 'mensal' ? p.priceMensal : p.priceAnual}
                 </span>
-                {p.priceMensal !== 'Personalizado' && (
+                {p.priceMensal !== 'Gratuito' && p.priceMensal !== 'Planejado' && p.priceMensal !== 'Futuro' && (
                   <span className="price-period">/ mês</span>
                 )}
               </div>
@@ -151,8 +144,8 @@ export default function Planos() {
             </div>
 
             <div className="plan-footer">
-              <button 
-                onClick={() => alert(`Iniciando simulação de assinatura para plano ${p.name}`)}
+              <button
+                onClick={() => alert(`${p.name}: informação exibida para apresentação do projeto.`)}
                 className={`btn w-full ${p.popular ? 'btn-primary' : 'btn-secondary'}`}
               >
                 {p.cta}
@@ -162,18 +155,16 @@ export default function Planos() {
         ))}
       </div>
 
-      {/* Feature matrix comparison */}
       <div className="comparison-section section-padding">
-        <h3 className="comparison-title text-center">Comparação Detalhada</h3>
-        
+        <h3 className="comparison-title text-center">Comparação Realista</h3>
         <div className="comparison-table-container glass-card">
           <table className="comparison-table">
             <thead>
               <tr>
                 <th>Funcionalidade</th>
-                <th>Básico</th>
-                <th>Profissional</th>
-                <th>Enterprise</th>
+                <th>Atual</th>
+                <th>Evolução</th>
+                <th>Futuro</th>
               </tr>
             </thead>
             <tbody>
