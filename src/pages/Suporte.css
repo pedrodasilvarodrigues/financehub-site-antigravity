@@ -1,0 +1,184 @@
+/* Suporte Page CSS */
+
+.support-search-section {
+  padding: 3rem;
+  margin-bottom: 4rem;
+}
+
+.search-header-group h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.search-header-group p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.search-input-field {
+  width: 100%;
+  padding-left: 3rem;
+  height: 50px;
+  font-size: 1rem;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tutorial-item-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+body.light .tutorial-item-card {
+  background-color: #ffffff;
+}
+
+.tutorial-item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  background-color: var(--card-bg-hover);
+}
+
+.tut-cat-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+}
+
+.tutorial-item-card h4 {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.tut-link-text {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.tutorial-item-card:hover .tut-link-text {
+  color: var(--primary-color);
+}
+
+/* Form and Details grid */
+.ticket-support-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.ticket-form-card {
+  padding: 3rem;
+}
+
+.ticket-form-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.ticket-success-alert {
+  background-color: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-left: 4px solid #10b981;
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.ticket-success-alert p {
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+.tech-channels-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-support-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.support-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.channel-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.channel-item svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.channel-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 0.15rem;
+}
+
+.channel-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Responsive adjustment */
+@media (max-width: 968px) {
+  .ticket-support-grid {
+    grid-template-columns: 1fr;
+  }
+  .ticket-form-card {
+    padding: 2rem 1.5rem;
+  }
+  .support-search-section {
+    padding: 2rem 1.5rem;
+  }
+}

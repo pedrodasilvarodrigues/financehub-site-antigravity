@@ -1,0 +1,170 @@
+/* Sobre Page CSS */
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.card-title-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.card-title-icon h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.mvv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mvv-list li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.mvv-list li strong {
+  color: var(--text-color);
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Values Grid */
+.section-subtitle-center {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  padding: 1.75rem;
+}
+
+.value-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.value-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Vertical Timeline */
+.vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-item-block {
+  display: grid;
+  grid-template-columns: 180px 40px 1fr;
+  align-items: start;
+}
+
+.timeline-date {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  text-align: right;
+  padding-top: 1.25rem;
+}
+
+.timeline-dot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.timeline-dot-line {
+  width: 2px;
+  background-color: var(--border-color);
+  flex: 1;
+}
+
+/* Hide first/last lines if needed, or manage spacing */
+.timeline-item-block:last-child .timeline-dot-line {
+  display: none;
+}
+
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 3px solid var(--bg-color);
+  position: absolute;
+  top: 1.5rem;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.timeline-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.timeline-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-item-block {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .timeline-date {
+    text-align: left;
+    padding-top: 0;
+  }
+  .timeline-dot-wrapper {
+    display: none;
+  }
+  .timeline-card {
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,24 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 70px; /* Space for fixed header */
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Base utility for full width inputs */
+.w-full {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 70px;
+  }
+}

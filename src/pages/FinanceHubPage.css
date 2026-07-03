@@ -1,0 +1,221 @@
+/* FinanceHub Page CSS */
+
+.page-title {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.concept-main h2, .concept-problem h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-color);
+}
+
+.problem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.problem-list li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.problem-list li::before {
+  content: "•";
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 1.25rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.grid-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.audience-section h2, .differentials-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.audience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.audience-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.audience-item svg {
+  flex-shrink: 0;
+}
+
+.differentials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diff-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: 10px;
+}
+
+.diff-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+body.light .diff-icon {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+.diff-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.diff-card p {
+  font-size: 0.85rem;
+}
+
+/* Architecture */
+.architecture-section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.arch-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.arch-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.arch-text h3, .tech-stack-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.tech-stack-card {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+body.light .tech-stack-card {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.tech-dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.tech-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.tech-item span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive adjust */
+@media (max-width: 968px) {
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .arch-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .architecture-section {
+    padding: 2rem 1.5rem;
+  }
+  .page-title {
+    font-size: 2.25rem;
+  }
+}
