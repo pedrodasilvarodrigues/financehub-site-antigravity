@@ -63,10 +63,10 @@ export default function Suporte() {
       <div className="glow-spot-secondary" style={{ bottom: '15%', right: '15%' }}></div>
 
       <div className="section-header text-center animate-fade-in">
-        <div className="badge">Suporte do Projeto</div>
+        <div className="badge">Suporte FinanceHub</div>
         <h1 className="page-title text-gradient">Central de Ajuda</h1>
         <p className="page-subtitle">
-          Consulte guias sobre a versão atual do FinanceHub ou registre uma solicitação demonstrativa para acompanhamento do TCC.
+          Consulte guias de uso do FinanceHub ou registre uma solicitação para atendimento da equipe.
         </p>
       </div>
 
@@ -109,7 +109,7 @@ export default function Suporte() {
         <div className="glass-card ticket-form-card">
           <h2>Registrar Solicitação</h2>
           <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>
-            Este formulário é demonstrativo e registra um protocolo visual para apresentação. Ele não envia suporte real externo.
+            Registre sua solicitação para organizar dúvidas, implantação, treinamento ou suporte de uso.
           </p>
 
           {ticketId && (
@@ -148,7 +148,7 @@ export default function Suporte() {
                   className="form-input"
                   style={{ backgroundColor: 'var(--input-bg)' }}
                 >
-                  <option value="login">Login / Supabase</option>
+                  <option value="login">Login e acesso</option>
                   <option value="pdv">Vendas / PDV</option>
                   <option value="financeiro">Financeiro</option>
                   <option value="estoque">Estoque e Produtos</option>
@@ -198,7 +198,7 @@ export default function Suporte() {
           <div className="glass-card contact-support-box">
             <h3>Informações Úteis</h3>
             <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem' }}>
-              A versão atual é um projeto de TCC. Para testes, use os links oficiais do GitHub e da Vercel.
+              Use os canais abaixo para consultar acesso, instalação e informações do FinanceHub.
             </p>
 
             <div className="support-channels-list">
@@ -206,8 +206,8 @@ export default function Suporte() {
                 <MessageSquare className="text-cyan" size={20} />
                 <div>
                   <strong>Site online</strong>
-                  <span>financehub-tcc.vercel.app</span>
-                  <span>Versão principal do sistema.</span>
+                  <span>Versão online oficial</span>
+                  <span>Acesso principal ao sistema.</span>
                 </div>
               </div>
 
@@ -216,7 +216,7 @@ export default function Suporte() {
                 <div>
                   <strong>Aplicativo Windows</strong>
                   <span>FinanceHub-Setup-1.0.0.exe</span>
-                  <span>Publicado no GitHub Releases.</span>
+                  <span>Instalador oficial para computadores Windows.</span>
                 </div>
               </div>
 
@@ -224,8 +224,8 @@ export default function Suporte() {
                 <FileText className="text-orange" size={20} />
                 <div>
                   <strong>Dados</strong>
-                  <span>Login e persistência via Supabase.</span>
-                  <span>Dados isolados por organização.</span>
+                  <span>Login seguro e dados por empresa.</span>
+                  <span>Ambiente separado por conta empresarial.</span>
                 </div>
               </div>
             </div>

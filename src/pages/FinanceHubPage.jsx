@@ -10,8 +10,8 @@ export default function FinanceHubPage() {
       icon: <Globe className="text-cyan" size={24} />
     },
     {
-      title: 'Dados por Empresa no Supabase',
-      desc: 'O sistema usa Supabase Auth e banco de dados com isolamento por organização, mantendo cada conta com seus próprios dados operacionais.',
+      title: 'Dados por Empresa',
+      desc: 'Cada empresa acessa seu próprio ambiente, mantendo cadastros, vendas e rotinas operacionais separados por conta.',
       icon: <Shield className="text-purple" size={24} />
     },
     {
@@ -31,15 +31,15 @@ export default function FinanceHubPage() {
     'Empresas que querem substituir planilhas por um painel único',
     'Operações que precisam cadastrar produtos, clientes, fornecedores e funcionários',
     'Negócios que precisam acompanhar pedidos por status',
-    'Usuários que precisam de um protótipo funcional para apresentação de TCC'
+    'Equipes que precisam centralizar rotina comercial, estoque e financeiro'
   ];
 
   const techStack = [
-    { name: 'React + Vite', type: 'Interface web do sistema e do site institucional' },
-    { name: 'Supabase', type: 'Autenticação, banco de dados e isolamento por organização' },
-    { name: 'Vercel', type: 'Hospedagem da versão online do FinanceHub' },
-    { name: 'Electron', type: 'Aplicativo desktop Windows que carrega a versão online' },
-    { name: 'OpenStreetMap / Leaflet', type: 'Mapa real usado no módulo de logística e frete' }
+    { name: 'Aplicação web', type: 'Interface online do sistema e da área institucional' },
+    { name: 'Ambiente seguro', type: 'Login, organização por empresa e dados separados por conta' },
+    { name: 'Hospedagem online', type: 'Publicação da versão oficial do FinanceHub' },
+    { name: 'Aplicativo Windows', type: 'Janela desktop que carrega a versão online oficial' },
+    { name: 'Mapa real', type: 'Base visual usada no módulo de logística e frete' }
   ];
 
   return (
@@ -48,9 +48,9 @@ export default function FinanceHubPage() {
 
       <div className="section-header text-center animate-fade-in">
         <div className="badge">O FinanceHub</div>
-        <h1 className="page-title text-gradient">Gestão financeira e operacional para o TCC FinanceHub</h1>
+        <h1 className="page-title text-gradient">Gestão financeira e operacional para empresas</h1>
         <p className="page-subtitle">
-          Conheça o sistema real: uma aplicação web conectada ao Supabase, publicada na Vercel e disponível também como aplicativo Windows.
+          Conheça uma plataforma web para organizar vendas, estoque, financeiro, pedidos, agenda e logística em uma experiência desktop.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export default function FinanceHubPage() {
             O FinanceHub é um sistema de gestão financeira e operacional construído em React. Ele reúne rotinas de vendas, PDV, produtos, estoque, clientes, fornecedores, funcionários, pedidos, caixa, financeiro, relatórios, agenda e logística em uma única interface.
           </p>
           <p style={{ marginTop: '1rem' }}>
-            A versão atual usa Supabase para autenticação e persistência por empresa. O aplicativo Windows foi criado com Electron e carrega a versão online publicada, permitindo que novas alterações apareçam sem gerar um novo instalador.
+            O aplicativo Windows carrega a versão online oficial, permitindo que melhorias publicadas no sistema apareçam na próxima abertura ou atualização.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function FinanceHubPage() {
           <h2>O Problema que Resolve</h2>
           <ul className="problem-list">
             <li><strong>Informação espalhada:</strong> vendas, produtos, caixa e financeiro passam a ficar no mesmo painel.</li>
-            <li><strong>Controle de estoque:</strong> produtos com atenção ou nível crítico ficam destacados e podem gerar reposição.</li>
+            <li><strong>Controle de estoque:</strong> produtos com atenção ou nível crítico ficam destacados e podem gerar pedido de compra.</li>
             <li><strong>Pedidos misturados:</strong> a área de pedidos separa abertos, aprovados, separados, em entrega e concluídos.</li>
             <li><strong>Frete manual:</strong> o módulo de logística aceita CEP, endereço completo e múltiplas entregas na rota.</li>
           </ul>
@@ -80,7 +80,7 @@ export default function FinanceHubPage() {
         <div className="audience-section">
           <h2>Quem pode usar o FinanceHub?</h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            A plataforma foi criada como um sistema de gestão para apresentação acadêmica e validação de fluxos reais de uma operação comercial.
+            A plataforma foi criada para empresas que precisam organizar rotinas comerciais, financeiras e operacionais em uma interface única.
           </p>
           <div className="audience-list">
             {targetAudience.map((item, i) => (
@@ -110,25 +110,25 @@ export default function FinanceHubPage() {
 
       <div className="architecture-section glass-card">
         <div className="arch-header">
-          <h2>Arquitetura e Tecnologia</h2>
+          <h2>Estrutura do Produto</h2>
           <p>
-            A base técnica atual prioriza uma aplicação web funcional, dados por conta e distribuição simples pelo navegador ou pelo aplicativo Windows.
+            A estrutura atual prioriza uma aplicação web funcional, dados por empresa e acesso simples pelo navegador ou pelo aplicativo Windows.
           </p>
         </div>
 
         <div className="arch-grid">
           <div className="arch-text">
-            <h3>Arquitetura Atual</h3>
+            <h3>Modelo de Funcionamento</h3>
             <p>
-              O frontend do sistema foi desenvolvido em React e Vite. A autenticação e os dados operacionais são carregados do Supabase, com funções RPC para conta, organização e coleções da aplicação.
+              O FinanceHub funciona como uma plataforma online com acesso por conta, organização dos dados por empresa e módulos integrados para operação diária.
             </p>
             <p style={{ marginTop: '1rem' }}>
-              O aplicativo desktop em Electron não embute o frontend dentro do executável: ele abre a URL oficial hospedada na Vercel. Assim, quando o site online recebe uma atualização, o aplicativo exibe a nova versão na próxima abertura ou atualização.
+              O aplicativo desktop não embute uma versão antiga do sistema: ele abre a versão online oficial. Assim, quando o sistema recebe uma atualização, o aplicativo exibe a nova versão na próxima abertura ou atualização.
             </p>
           </div>
 
           <div className="tech-stack-card">
-            <h3>Stack Tecnológica Real</h3>
+            <h3>Componentes do Produto</h3>
             <div className="tech-list">
               {techStack.map((tech, i) => (
                 <div key={i} className="tech-item">

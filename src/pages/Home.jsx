@@ -18,7 +18,7 @@ export default function Home({ setCurrentPage }) {
     {
       icon: <Layers size={24} className="icon-purple" />,
       title: 'Dados por Empresa',
-      desc: 'Contas autenticadas pelo Supabase, com dados carregados por organização.'
+      desc: 'Cada empresa acessa um ambiente próprio, com dados organizados por conta.'
     },
     {
       icon: <Zap size={24} className="icon-orange" />,
@@ -81,7 +81,7 @@ export default function Home({ setCurrentPage }) {
     },
     {
       title: 'Frente de Caixa (PDV)',
-      desc: 'Interface para registrar vendas, selecionar produto, pagamento, desconto e atualizar estoque.',
+      desc: 'Interface para registrar vendas, selecionar produto, forma de recebimento, desconto e atualizar estoque.',
       color: 'gradient-purple-accent',
       elements: (
         <div className="mock-ui">
@@ -104,7 +104,7 @@ export default function Home({ setCurrentPage }) {
                 </div>
               </div>
               <div className="pdv-total">
-                <span>TOTAL A PAGAR</span>
+              <span>TOTAL DA VENDA</span>
                 <strong className="text-accent">R$ 4.597,00</strong>
               </div>
             </div>
@@ -160,16 +160,16 @@ export default function Home({ setCurrentPage }) {
             Gestão financeira e operacional para o seu negócio
           </h1>
           <p className="hero-subtitle">
-            O FinanceHub reúne PDV, produtos, estoque, pedidos, caixa, financeiro, relatórios, agenda e logística em uma plataforma web conectada ao Supabase.
+            O FinanceHub reúne PDV, produtos, estoque, pedidos, caixa, financeiro, relatórios, agenda e logística em uma plataforma web segura.
           </p>
           <div className="hero-actions-btns">
             <button onClick={() => handleNavClick('downloads')} className="btn btn-primary">
               <Download size={18} />
               <span>Baixar Agora</span>
             </button>
-            <a href="#demonstracao-video" className="btn btn-secondary">
+            <a href="#visao-geral-video" className="btn btn-secondary">
               <Play size={16} />
-              <span>Ver Demonstração</span>
+              <span>Ver Visão Geral</span>
             </a>
           </div>
         </div>
@@ -259,7 +259,7 @@ export default function Home({ setCurrentPage }) {
       </section>
 
       {/* Video Demo Section */}
-      <section id="demonstracao-video" className="demo-section container">
+      <section id="visao-geral-video" className="demo-section container">
         <div className="section-header text-center">
           <h2 className="section-title">O FinanceHub em ação</h2>
           <p className="section-desc">
@@ -281,7 +281,7 @@ export default function Home({ setCurrentPage }) {
               <div className="video-bottom-controls">
                 <div className="control-left">
                   <Play size={14} />
-                  <span>Demonstração FinanceHub - Visão Geral</span>
+                  <span>FinanceHub - Visão Geral</span>
                 </div>
                 <div className="control-right">
                   <span className="control-hd">HD</span>
@@ -325,15 +325,15 @@ export default function Home({ setCurrentPage }) {
           <div className="cta-content">
             <h2>Pronto para transformar a gestão da sua empresa?</h2>
             <p>
-              Baixe o instalador Windows ou acesse a versão online publicada na Vercel.
+              Baixe o instalador Windows ou acesse a versão online oficial.
             </p>
             <div className="cta-buttons">
               <button onClick={() => handleNavClick('downloads')} className="btn btn-primary">
                 <Download size={18} />
                 <span>Instalar no Windows</span>
               </button>
-              <button onClick={() => handleNavClick('planos')} className="btn btn-outline">
-                <span>Ver Planos</span>
+              <button onClick={() => handleNavClick('contato')} className="btn btn-outline">
+                <span>Falar com Atendimento</span>
                 <ArrowRight size={16} />
               </button>
             </div>

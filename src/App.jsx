@@ -7,7 +7,6 @@ import FinanceHubPage from './pages/FinanceHubPage';
 import Funcionalidades from './pages/Funcionalidades';
 import Documentacao from './pages/Documentacao';
 import Downloads from './pages/Downloads';
-import Planos from './pages/Planos';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 import Suporte from './pages/Suporte';
@@ -24,7 +23,7 @@ function AppContent() {
         const route = hash.replace('#/', '');
         const validRoutes = [
           'home', 'financehub', 'funcionalidades', 'documentacao',
-          'downloads', 'planos', 'sobre', 'contato', 'suporte'
+          'downloads', 'sobre', 'contato', 'suporte'
         ];
         if (validRoutes.includes(route)) {
           setCurrentPage(route);
@@ -55,8 +54,6 @@ function AppContent() {
         return <Documentacao />;
       case 'downloads':
         return <Downloads />;
-      case 'planos':
-        return <Planos />;
       case 'sobre':
         return <Sobre />;
       case 'contato':

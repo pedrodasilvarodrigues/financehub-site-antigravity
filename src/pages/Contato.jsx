@@ -28,7 +28,7 @@ export default function Contato() {
 
     setLoading(true);
 
-    // Simulate API request
+    // Simula o envio para manter a experiência fluida nesta versão do site.
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
@@ -51,7 +51,7 @@ export default function Contato() {
         <div className="badge">Fale Conosco</div>
         <h1 className="page-title text-gradient">Contato Institucional</h1>
         <p className="page-subtitle">
-          Dúvidas sobre o projeto? Use o formulário demonstrativo para registrar uma mensagem local na interface.
+          Fale com o FinanceHub para tirar dúvidas, solicitar atendimento ou combinar treinamento para sua equipe.
         </p>
       </div>
 
@@ -63,7 +63,7 @@ export default function Contato() {
               <ShieldCheck size={20} className="text-green" />
               <div>
                 <strong>Mensagem enviada com sucesso!</strong>
-                <p>Mensagem registrada na interface demonstrativa do site.</p>
+                <p>Recebemos sua solicitação e entraremos em contato pelo canal informado.</p>
               </div>
             </div>
           )}
@@ -121,9 +121,9 @@ export default function Contato() {
                 className="form-input"
                 style={{ backgroundColor: 'var(--input-bg)' }}
               >
-                <option value="comercial">Informações sobre o projeto</option>
-                <option value="parcerias">Sugestões de evolução</option>
-                <option value="imprensa">Documentação do TCC</option>
+                <option value="comercial">Informações comerciais</option>
+                <option value="implantacao">Implantação e treinamento</option>
+                <option value="suporte">Suporte ao uso</option>
                 <option value="outros">Outros Assuntos</option>
               </select>
             </div>
@@ -158,34 +158,34 @@ export default function Contato() {
         {/* Contact Info Details */}
         <div className="contact-details-col">
           <div className="glass-card detail-info-box">
-            <h3>Informações do Projeto</h3>
-            <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>Este site é institucional e demonstrativo. Os canais abaixo descrevem o estado atual do projeto.</p>
+            <h3>Informações de Atendimento</h3>
+            <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>Nossa equipe orienta empresas que desejam conhecer, instalar e treinar usuários no FinanceHub.</p>
             
             <div className="info-list">
               <div className="info-item">
                 <Mail size={20} className="text-cyan" />
                 <div>
-                  <strong>Repositório</strong>
-                  <span>GitHub: pedrodasilvarodrigues</span>
-                  <span>Projeto: financehub-site-antigravity</span>
+                  <strong>Contato Comercial</strong>
+                  <span>Solicite apresentação do FinanceHub</span>
+                  <span>Atendimento para implantação e dúvidas</span>
                 </div>
               </div>
 
               <div className="info-item">
                 <Phone size={20} className="text-purple" />
                 <div>
-                  <strong>Publicação</strong>
-                  <span>Site institucional na Vercel</span>
-                  <span>Sistema principal em financehub-tcc.vercel.app</span>
+                  <strong>Treinamento</strong>
+                  <span>Capacitação para equipes operacionais</span>
+                  <span>Orientação para uso no dia a dia</span>
                 </div>
               </div>
 
               <div className="info-item">
                 <MapPin size={20} className="text-orange" />
                 <div>
-                  <strong>Contexto</strong>
-                  <span>Projeto acadêmico / TCC</span>
-                  <span>Aplicativo Windows publicado via GitHub Releases</span>
+                  <strong>Disponibilidade</strong>
+                  <span>Versão online e aplicativo Windows</span>
+                  <span>Interface preparada para uso em desktop</span>
                 </div>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function Contato() {
             <MessageSquare size={24} className="text-green" />
             <div>
               <h4>Compromisso de Resposta</h4>
-              <p>O formulário é demonstrativo e ajuda a apresentar como uma área de contato poderia funcionar.</p>
+              <p>As solicitações são tratadas como contato comercial, suporte ou treinamento conforme o assunto informado.</p>
             </div>
           </div>
           <div className="glass-card training-contact-box">

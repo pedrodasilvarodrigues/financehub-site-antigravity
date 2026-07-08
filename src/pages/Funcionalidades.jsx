@@ -13,7 +13,7 @@ export default function Funcionalidades() {
       id: 'dashboard',
       icon: <BarChart size={20} />,
       name: 'Dashboard Gerencial',
-      desc: 'Sua central de acompanhamento. O Dashboard consolida dados de vendas, fluxo de caixa, estoque e indicadores principais da empresa autenticada no Supabase.',
+      desc: 'Sua central de acompanhamento. O Dashboard consolida dados de vendas, fluxo de caixa, estoque e indicadores principais da empresa.',
       benefits: [
         'Indicadores carregados a partir dos dados salvos da organização.',
         'Gráficos interativos de receitas versus despesas.',
@@ -127,14 +127,14 @@ export default function Funcionalidades() {
       id: 'pdv',
       icon: <ShoppingCart size={20} />,
       name: 'Ponto de Venda (PDV)',
-      desc: 'Frente de caixa para registrar vendas, selecionar produtos, quantidade, desconto e forma de pagamento. O fluxo valida caixa aberto, estoque disponível e atualiza os registros do sistema.',
+      desc: 'Frente de caixa para registrar vendas, selecionar produtos, quantidade, desconto e forma de recebimento. O fluxo valida caixa aberto, estoque disponível e atualiza os registros do sistema.',
       benefits: [
         'Validação de caixa aberto antes da venda.',
         'Baixa de estoque após finalizar venda.',
-        'Registro de forma de pagamento.',
+        'Registro da forma de recebimento.',
         'Histórico de vendas separado da tela de registro.'
       ],
-      useCase: 'O operador escolhe o produto, informa quantidade, desconto e pagamento. Ao confirmar, a venda é registrada e o estoque é atualizado.',
+      useCase: 'O operador escolhe o produto, informa quantidade, desconto e forma de recebimento. Ao confirmar, a venda é registrada e o estoque é atualizado.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -203,7 +203,7 @@ export default function Funcionalidades() {
         'Exclusão de registros financeiros.',
         'Visão de fluxo de caixa e totais.'
       ],
-      useCase: 'O administrador registra uma conta, acompanha o vencimento e altera o status quando o pagamento é concluído.',
+      useCase: 'O administrador registra uma conta, acompanha o vencimento e altera o status quando a obrigação é concluída.',
       mockup: (
         <div className="module-mockup-ui">
           <div className="mock-ui-header">
@@ -230,7 +230,7 @@ export default function Funcionalidades() {
       desc: 'Central de indicadores visuais com gráficos, tabelas e resumos para acompanhar vendas, produtos, caixa e financeiro.',
       benefits: [
         'Gráficos e KPIs operacionais.',
-        'Resumo de formas de pagamento.',
+        'Resumo de formas de recebimento.',
         'Ranking de produtos vendidos.',
         'Apoio visual para análise do negócio.'
       ],
@@ -347,12 +347,12 @@ export default function Funcionalidades() {
       id: 'multi',
       icon: <Building2 size={20} />,
       name: 'Organização por Empresa',
-      desc: 'Cada cadastro autenticado possui uma organização no Supabase. Os dados operacionais são carregados para essa empresa, evitando misturar informações de contas diferentes.',
+      desc: 'Cada cadastro empresarial possui um ambiente próprio. Os dados operacionais são carregados para essa empresa, evitando misturar informações de contas diferentes.',
       benefits: [
         'Conta vinculada a uma organização.',
-        'Dados isolados por empresa autenticada.',
+        'Dados isolados por empresa.',
         'Base preparada para evoluir para multiusuário.',
-        'Sessão persistente com Supabase Auth.'
+        'Sessão persistente para o usuário.'
       ],
       useCase: 'Uma nova conta começa vazia e passa a carregar somente os dados salvos no banco da sua própria organização.',
       mockup: (
@@ -365,8 +365,8 @@ export default function Funcionalidades() {
           </div>
           <div className="mock-ui-content">
             <div className="multi-list">
-              <div className="multi-row"><span>Empresa autenticada</span> <strong>Ativa</strong></div>
-              <div className="multi-row"><span>Dados operacionais</span> <strong>Supabase</strong></div>
+              <div className="multi-row"><span>Empresa cadastrada</span> <strong>Ativa</strong></div>
+              <div className="multi-row"><span>Dados operacionais</span> <strong>Por empresa</strong></div>
               <div className="multi-row"><span>Sessão</span> <strong className="text-cyan">Persistente</strong></div>
             </div>
           </div>
@@ -386,7 +386,7 @@ export default function Funcionalidades() {
         <div className="badge">Módulos do Sistema</div>
         <h1 className="page-title text-gradient">Funcionalidades do FinanceHub</h1>
         <p className="page-subtitle">
-          Explore os recursos atuais do sistema: gestão comercial, estoque, financeiro, pedidos, frete, agenda e dados conectados ao Supabase.
+          Explore os recursos atuais do sistema: gestão comercial, estoque, financeiro, pedidos, frete, agenda e dados por empresa.
         </p>
       </div>
 

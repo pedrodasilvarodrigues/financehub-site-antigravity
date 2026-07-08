@@ -13,7 +13,6 @@ export default function Header({ currentPage, setCurrentPage }) {
     { id: 'funcionalidades', label: 'Funcionalidades' },
     { id: 'documentacao', label: 'Documentação' },
     { id: 'downloads', label: 'Downloads' },
-    { id: 'planos', label: 'Planos' },
     { id: 'sobre', label: 'Sobre' },
     { id: 'contato', label: 'Contato' },
     { id: 'suporte', label: 'Suporte' },

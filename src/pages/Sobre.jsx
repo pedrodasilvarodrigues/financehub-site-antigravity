@@ -6,7 +6,7 @@ export default function Sobre() {
   const values = [
     { title: 'Clareza Operacional', desc: 'O sistema deve ajudar o usuário a entender vendas, estoque, caixa e financeiro sem poluição visual.' },
     { title: 'Dados Organizados', desc: 'Cada empresa autenticada deve acessar apenas seus próprios dados operacionais.' },
-    { title: 'Evolução Realista', desc: 'O projeto apresenta o que já funciona e separa com honestidade o que ainda é roadmap.' },
+    { title: 'Evolução Contínua', desc: 'O produto apresenta recursos atuais e segue recebendo melhorias de usabilidade e operação.' },
     { title: 'Foco em Desktop', desc: 'A experiência principal foi pensada para computadores usados em gestão e operação.' }
   ];
 
@@ -14,7 +14,7 @@ export default function Sobre() {
     {
       date: 'Junho de 2026',
       title: 'Reconstrução do FinanceHub',
-      desc: 'Início da reconstrução local em React + Vite, partindo da análise do sistema original e dos requisitos do TCC.'
+      desc: 'Início da nova versão do FinanceHub, com foco em interface desktop, clareza operacional e rotinas reais de gestão.'
     },
     {
       date: 'Junho de 2026',
@@ -23,8 +23,8 @@ export default function Sobre() {
     },
     {
       date: 'Julho de 2026',
-      title: 'Supabase e Dados por Empresa',
-      desc: 'Conexão com Supabase Auth e persistência por organização, removendo dados demonstrativos como base principal do app.'
+      title: 'Dados por Empresa',
+      desc: 'Organização dos dados por conta empresarial, mantendo cadastros e operações separados por empresa.'
     },
     {
       date: 'Julho de 2026',
@@ -34,7 +34,7 @@ export default function Sobre() {
     {
       date: 'Julho de 2026',
       title: 'Site Institucional e Download',
-      desc: 'Publicação do site institucional com download real do FinanceHub-Setup-1.0.0.exe via GitHub Releases.'
+      desc: 'Publicação do site institucional com acesso ao download do instalador Windows do FinanceHub.'
     }
   ];
 
@@ -44,10 +44,10 @@ export default function Sobre() {
       <div className="glow-spot-secondary" style={{ bottom: '15%', right: '10%' }}></div>
 
       <div className="section-header text-center animate-fade-in">
-        <div className="badge">Sobre o Projeto</div>
+        <div className="badge">Sobre o FinanceHub</div>
         <h1 className="page-title text-gradient">História & Objetivo</h1>
         <p className="page-subtitle">
-          O FinanceHub é um projeto de TCC voltado à gestão financeira e operacional, com foco em interface desktop, Supabase e distribuição por aplicativo Windows.
+          O FinanceHub é uma solução voltada à gestão financeira e operacional, com foco em interface desktop, rotina empresarial e aplicativo Windows.
         </p>
       </div>
 
@@ -58,10 +58,10 @@ export default function Sobre() {
             <h2>História do Projeto</h2>
           </div>
           <p>
-            O FinanceHub foi desenvolvido para demonstrar como um sistema de gestão pode reunir rotinas importantes de uma empresa em uma interface única: vendas, produtos, estoque, pedidos, caixa, financeiro, frete, agenda e relatórios.
+            O FinanceHub foi desenvolvido para reunir rotinas importantes de uma empresa em uma interface única: vendas, produtos, estoque, pedidos, caixa, financeiro, frete, agenda e relatórios.
           </p>
           <p style={{ marginTop: '1rem' }}>
-            A versão atual combina React + Vite no frontend, Supabase para autenticação e dados, Vercel para hospedagem e Electron para entregar uma experiência desktop no Windows.
+            A versão atual combina sistema online, dados por empresa e aplicativo Windows para entregar uma experiência desktop conectada.
           </p>
         </div>
 
@@ -72,10 +72,10 @@ export default function Sobre() {
           </div>
           <ul className="mvv-list">
             <li>
-              <strong>Missão:</strong> Organizar vendas, estoque, caixa e financeiro em uma experiência simples para apresentação acadêmica e evolução futura.
+              <strong>Missão:</strong> Organizar vendas, estoque, caixa e financeiro em uma experiência simples para empresas.
             </li>
             <li>
-              <strong>Visão:</strong> Evoluir de protótipo funcional para uma solução mais completa, com permissões, relatórios exportáveis e integrações reais.
+              <strong>Visão:</strong> Evoluir continuamente como uma solução mais completa, com permissões, relatórios exportáveis e integrações reais.
             </li>
             <li>
               <strong>Valores:</strong> Honestidade sobre recursos existentes, segurança dos dados por empresa e foco em usabilidade.
@@ -85,7 +85,7 @@ export default function Sobre() {
       </div>
 
       <div className="values-section section-padding">
-        <h3 className="section-subtitle-center text-center">Valores do Projeto</h3>
+        <h3 className="section-subtitle-center text-center">Valores do Produto</h3>
         <div className="values-grid">
           {values.map((v, i) => (
             <div key={i} className="glass-card value-card">

@@ -49,7 +49,7 @@ export default function Documentacao() {
   const faqs = [
     {
       q: 'O FinanceHub funciona sem internet?',
-      a: 'A versão atual depende da versão online publicada na Vercel e do Supabase para login e dados. O aplicativo Windows abre essa versão online.'
+      a: 'O FinanceHub depende da versão online oficial para login, dados e sincronização. O aplicativo Windows abre essa versão online.'
     },
     {
       q: 'O sistema emite documentos fiscais reais?',
@@ -57,11 +57,11 @@ export default function Documentacao() {
     },
     {
       q: 'Onde os dados ficam salvos?',
-      a: 'Os dados da aplicação são carregados e salvos no Supabase por organização autenticada. Contas novas começam sem dados operacionais.'
+      a: 'Os dados ficam organizados por empresa. Contas novas começam sem dados operacionais e passam a armazenar seus próprios cadastros e registros.'
     },
     {
       q: 'O botão de download baixa um instalador real?',
-      a: 'Sim. O download aponta para o instalador Windows FinanceHub-Setup-1.0.0.exe publicado no GitHub Releases.'
+      a: 'Sim. O download aponta para o instalador Windows oficial FinanceHub-Setup-1.0.0.exe.'
     },
     {
       q: 'O assistente usa IA generativa?',
@@ -82,7 +82,7 @@ export default function Documentacao() {
         <div className="badge">Central de Ajuda</div>
         <h1 className="page-title text-gradient">Documentação do FinanceHub</h1>
         <p className="page-subtitle">
-          Guias objetivos sobre instalação, módulos atuais, dados no Supabase, aplicativo Windows e limitações reais da versão atual.
+          Guias objetivos sobre instalação, módulos do sistema, aplicativo Windows e uso diário do FinanceHub.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default function Documentacao() {
             <div className="doc-section">
               <h2>O que é o FinanceHub</h2>
               <p>
-                O FinanceHub é uma aplicação de gestão financeira e operacional construída em React + Vite, conectada ao Supabase e publicada na Vercel. Ela possui módulos para vendas, produtos, estoque, pedidos, caixa, financeiro, relatórios, logística, agenda, fornecedores e equipe.
+                O FinanceHub é uma aplicação de gestão financeira e operacional. Ela possui módulos para vendas, produtos, estoque, pedidos, caixa, financeiro, relatórios, logística, agenda, fornecedores e equipe.
               </p>
               <div className="doc-alert note">
                 <BookOpen size={20} />
@@ -125,8 +125,8 @@ export default function Documentacao() {
               <h3>Principais Pilares</h3>
               <ul>
                 <li><strong>Gestão operacional:</strong> vendas, estoque, pedidos e financeiro em uma interface única.</li>
-                <li><strong>Dados por empresa:</strong> autenticação e persistência com Supabase.</li>
-                <li><strong>Aplicativo Windows:</strong> Electron carregando a versão online hospedada na Vercel.</li>
+                <li><strong>Dados por empresa:</strong> cada conta acessa seus próprios cadastros e registros.</li>
+                <li><strong>Aplicativo Windows:</strong> janela desktop carregando a versão online oficial.</li>
               </ul>
             </div>
           )}
@@ -192,7 +192,7 @@ export default function Documentacao() {
             <div className="doc-section">
               <h2>Como Baixar</h2>
               <p>
-                O instalador oficial fica publicado no GitHub Releases do projeto institucional. O botão da página Downloads aponta diretamente para esse arquivo.
+                O instalador oficial fica disponível pelo botão da página Downloads, apontando diretamente para o arquivo Windows.
               </p>
               <div className="doc-alert warning">
                 <AlertTriangle size={20} />
@@ -207,11 +207,11 @@ export default function Documentacao() {
           {activeTab === 'primeira-execucao' && (
             <div className="doc-section">
               <h2>Primeira Execução</h2>
-              <p>Na primeira abertura, entre com uma conta existente ou crie um cadastro. Cada conta fica ligada a uma organização no Supabase.</p>
+              <p>Na primeira abertura, entre com uma conta existente ou crie um cadastro. Cada conta fica ligada a uma empresa.</p>
               <h3>Etapas principais:</h3>
               <ul className="doc-check-list">
-                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Login:</strong> autenticação por email e senha via Supabase.</span></li>
-                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Empresa:</strong> a organização é carregada para separar os dados da conta.</span></li>
+                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Login:</strong> acesso por email e senha.</span></li>
+                <li><CheckCircle2 className="text-green" size={18} /><span><strong>Empresa:</strong> o ambiente empresarial é carregado para separar os dados da conta.</span></li>
                 <li><CheckCircle2 className="text-green" size={18} /><span><strong>Dados:</strong> contas novas começam vazias e passam a salvar os próprios registros.</span></li>
               </ul>
             </div>
@@ -221,7 +221,7 @@ export default function Documentacao() {
             <div className="doc-section">
               <h2>Manual: Produtos e Estoque</h2>
               <p>Cadastre produtos, controle preço, custo, categoria, estoque e estoque mínimo.</p>
-              <p>Produtos com atenção ficam destacados em amarelo; produtos críticos ficam destacados em vermelho. A partir do estoque baixo, é possível iniciar uma reposição com fornecedor sugerido.</p>
+              <p>Produtos com atenção ficam destacados em amarelo; produtos críticos ficam destacados em vermelho. A partir do estoque baixo, é possível iniciar um pedido de compra com fornecedor sugerido.</p>
             </div>
           )}
 
@@ -241,7 +241,7 @@ export default function Documentacao() {
                 <code>
                   1. Abra o caixa<br />
                   2. Selecione o produto<br />
-                  3. Informe quantidade, desconto e pagamento<br />
+                  3. Informe quantidade, desconto e forma de recebimento<br />
                   4. Confirme a venda<br />
                   5. Consulte o histórico de vendas
                 </code>
@@ -274,7 +274,7 @@ export default function Documentacao() {
                   <strong>Exemplos de consulta</strong>
                   <p>"Produto mais vendido do mês"</p>
                   <p>"Vendas do dia"</p>
-                  <p>"Clientes e formas de pagamento"</p>
+                  <p>"Clientes e formas de recebimento"</p>
                 </div>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function Documentacao() {
                   <h3>Não consigo entrar na conta</h3>
                 </div>
                 <div className="problem-solution">
-                  <p><strong>Causa comum:</strong> email não confirmado, senha incorreta ou sessão expirada no Supabase.</p>
+                  <p><strong>Causa comum:</strong> email não confirmado, senha incorreta ou sessão expirada.</p>
                   <p><strong>Resolução:</strong> tente recuperar a senha ou entrar novamente com o email cadastrado.</p>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function Documentacao() {
                 </div>
                 <div className="problem-solution">
                   <p><strong>Causa comum:</strong> falha de conexão com a versão online ou deploy em atualização.</p>
-                  <p><strong>Resolução:</strong> verifique a internet e tente recarregar. O app depende da URL publicada na Vercel.</p>
+                  <p><strong>Resolução:</strong> verifique a internet e tente recarregar. O app depende da versão online oficial.</p>
                 </div>
               </div>
             </div>
