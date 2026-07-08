@@ -13,6 +13,7 @@ Site institucional do FinanceHub em React + Vite, extraido do pacote `financehub
 - Pagina Downloads atualizada para baixar o instalador real pelo botao "Baixar FinanceHub para Windows".
 - Site publicado na Vercel em `https://financehub-site-antigravity.vercel.app`.
 - Textos institucionais revisados para remover promessas que nao existem na versao atual e destacar apenas funcionalidades reais do FinanceHub.
+- Aba Contato recebeu card de treinamento com botao para WhatsApp no numero (32) 98709-9260 e mensagem pronta para empresas solicitarem treinamento da equipe.
 
 # Pendente
 - Revisar visualmente as paginas publicadas apos o proximo deploy automatico da Vercel.

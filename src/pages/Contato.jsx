@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, ShieldCheck } from 'lucide-react';
+import { GraduationCap, Mail, Phone, MapPin, Send, MessageSquare, ShieldCheck } from 'lucide-react';
 import './Contato.css';
 
 export default function Contato() {
+  const trainingWhatsAppUrl = 'https://wa.me/5532987099260?text=Ol%C3%A1%2C%20preciso%20de%20treinamento%20para%20minha%20equipe%20usar%20o%20FinanceHub.';
   const [formData, setFormData] = useState({
     nome: '',
     empresa: '',
@@ -195,6 +196,24 @@ export default function Contato() {
             <div>
               <h4>Compromisso de Resposta</h4>
               <p>O formulário é demonstrativo e ajuda a apresentar como uma área de contato poderia funcionar.</p>
+            </div>
+          </div>
+          <div className="glass-card training-contact-box">
+            <GraduationCap size={24} className="text-cyan" />
+            <div>
+              <h4>Treinamento para Equipes</h4>
+              <p>Caso sua empresa precise de treinamento para usar o FinanceHub, entre em contato pelo WhatsApp.</p>
+              <a
+                className="btn btn-primary training-whatsapp-btn"
+                href={trainingWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Entrar em contato pelo WhatsApp para treinamento"
+              >
+                <Phone size={16} />
+                <span>Solicitar Treinamento</span>
+              </a>
+              <span className="training-phone">WhatsApp: (32) 98709-9260</span>
             </div>
           </div>
         </div>
