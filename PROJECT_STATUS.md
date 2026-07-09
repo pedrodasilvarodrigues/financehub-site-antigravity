@@ -16,6 +16,8 @@ Site institucional do FinanceHub em React + Vite, extraido do pacote `financehub
 - Aba Contato recebeu card de treinamento com botao para WhatsApp no numero (32) 98709-9260 e mensagem pronta para empresas solicitarem treinamento da equipe.
 - Site institucional ajustado para linguagem de produto real: removidos links de GitHub/LinkedIn, página de planos, menções técnicas a Supabase, TCC, repositório, conteúdo acadêmico e textos demonstrativos das páginas visíveis.
 
+- Menus suspensos dos formulários corrigidos globalmente para manter opções legíveis, evitando texto branco sobre fundo claro.
+
 # Pendente
 - Revisar visualmente as paginas publicadas apos o proximo deploy automatico da Vercel.
 

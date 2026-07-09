@@ -290,6 +290,22 @@ body.light .text-gradient {
   transition: all 0.2s ease;
 }
 
+select.form-input {
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  color-scheme: light;
+}
+
+select.form-input option {
+  color: #111827;
+  background-color: #ffffff;
+}
+
+select.form-input option:checked {
+  color: #ffffff;
+  background-color: #4f46e5;
+}
+
 .form-input:focus, .form-textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 2px var(--primary-glow);
